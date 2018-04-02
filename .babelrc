@@ -1,0 +1,18 @@
+{
+    "presets": [
+        //https://github.com/babel/babel/tree/master/packages/babel-preset-env
+        ["env", {
+            "targets": {
+              "browsers": ["last 2 versions"],
+              "node": "current"
+            },
+            "modules": false,
+        }],
+        "es2015",
+        "stage-0"
+    ],
+    "plugins": [
+        //https://segmentfault.com/q/1010000005596587?from=singlemessage&isappinstalled=1
+        "transform-runtime"
+    ]
+}
