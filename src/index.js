@@ -3,19 +3,14 @@
 * @Date: 2018-03-30 16:59:25
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-02 11:31:55
+* @Last Modified time: 2018-04-03 11:48:38
 */
 
 import _ from 'lodash';
 import './index.css';
-import cc from './cc.jpeg';
-function component() {
-    let element = document.createElement('div')
-    element.innerHTML = _.join(['hello-chenchao', 'webpack'],' ');
-    const myImg = new Image();
-    myImg.src = cc;
-    element.appendChild(myImg)
-    return element
-}
+import App from './app.js';
+console.log(21)
+console.log(React)
 
-document.body.appendChild(component())
+
+ReactDOM.render(<App />, document.getElementById('app'));
