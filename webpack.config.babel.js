@@ -3,7 +3,7 @@
 * @Date: 2018-03-30 16:56:57
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 11:44:59
+* @Last Modified time: 2018-04-03 19:24:59
 */
 
 import path from 'path';
@@ -12,12 +12,12 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import ManifestPlugin from 'manifest-webpack-plugin';
 import webpack from 'webpack';
 
-export default{
+export default {
     mode: 'development',
     watch: true,
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
     entry: {
-        bundle: './src/index.js'
+        bundle: './src/app.js'
     },
     devServer: {
         contentBase: './dist' //启用webpack-dev-server所加载的页面所在的目录,因为output配置的是dist
@@ -28,8 +28,9 @@ export default{
         publicPath: '/', //启用webpack-dev-middleware和webpack-hot-middleware时的根目录
     },
     resolve: {
-        extensions: ['.js', '.jsx']
-    },   
+        extensions: ['.js', '.jsx'] //自动解析确定的扩展
+    },
+    stats: "errors-only", 
     module: {
         rules: [
             { //模块规则
@@ -47,6 +48,15 @@ export default{
                     loader: 'style-loader'
                 }, {
                     loader: 'css-loader'
+                }]
+            }, {
+                test: /\.scss$/,
+                use: [{
+                    loader: 'style-loader'
+                }, {
+                    loader: 'css-loader'
+                }, {
+                    loader: 'sass-loader'
                 }]
             }, {
                 test: /\.(png|svg|jpg|gif|jpeg)$/,

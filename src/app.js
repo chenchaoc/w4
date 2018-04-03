@@ -1,14 +1,15 @@
 /*
 * @Author: chenchao
-* @Date: 2018-04-03 10:40:32
+* @Date: 2018-03-30 16:59:25
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 11:48:47
+* @Last Modified time: 2018-04-03 18:08:07
 */
+import './app.scss';
 import cc from './cc.jpeg';
 import { Fragment } from 'react';
 
-export default class extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -21,3 +22,5 @@ export default class extends React.Component {
         )
     }
 }
+
+ReactDOM.render(<App />, document.getElementById('app'));
