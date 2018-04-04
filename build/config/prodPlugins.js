@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 18:37:58
+* @Last Modified time: 2018-04-04 11:47:07
 */
 
 import webpack from 'webpack';
@@ -21,10 +21,8 @@ export default [
     }),
     new ExtractTextPlugin("[name]_[chunkhash:8].css",{allChunks: true}), //提取出来的样式放在[name].css文件中*/
     new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"',
         __DEV__: false,
         __PROD__: true,
-        gloablEnv: JSON.stringify(envName)
     }),
     new OptimizeCssAssetsPlugin({  //css压缩去除注释
         cssProcessor: require('cssnano'),

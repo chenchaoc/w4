@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 18:41:12
+* @Last Modified time: 2018-04-04 15:18:10
 */
 
 import entry from './config/entry.js';
@@ -23,7 +23,7 @@ export default {
         path: `${process.cwd()}/dist`,
         publicPath: envConfig.publicPath,
         filename: '[name]_[hash:8].js',
-        chunkFilename: '[name][id].js'
+        //chunkFilename: '[name][id].js'
     },
     resolve: {
         extensions: [".js", ".jsx", ".css", ".scss"],
