@@ -1,0 +1,119 @@
+/*
+* @Author: chenchao
+* @Date:   2018-04-09 18:36:39
+* @Last Modified by:   chenchao
+* @Last Modified time: 2018-04-09 18:38:03
+*/
+
+$prefixCls: 'toast';
+
+// Notice
+.#{$prefixCls}-box {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  width: 15%;
+  line-height: 24px;
+  font-size: 20px;
+  
+  transform: translate3D(-50%, -50%, 0);
+  z-index: 110;    
+}
+.#{$prefixCls}-wrapper {
+  position: absolute;
+  box-sizing: border-box;
+  left: 50%;
+  top: 30%;
+  margin: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background: rgba(0,0,0, .7);
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  z-index: 1110;
+  transition: all .3s;
+  transform: translate3D(-50%, -50%, 0) scale(1, 1);
+
+  &.leave {
+    transform: translate3D(-50%, -100%, 0);
+    opacity: 0;
+  }
+
+  // 正常提示
+  &.info {
+    animation: Flop 2s infinite;
+  }
+
+  // 成功提示
+  &.success {
+    animation: BombIn 2s infinite;
+  }
+
+  // 警告提示⚠️
+  &.warning {
+    animation: slideInFromBottom 2s infinite;
+  }
+
+  // 错误提示
+  &.error {
+    animation: shake 2s infinite;
+  }
+  .#{$prefixCls}-content {
+    text-align: center;
+    color: #fff;
+  }
+}
+//爆炸入库
+@keyframes BombIn {
+  0% {
+    transform: translate3D(-50%, -50%, 0) scale(0, 0);
+  }
+  // 50% {
+  //   transform: translate3D(-50%, -50%, 0) scale(1.2, 1.2);
+  // }
+  100% {
+    transform: translate(-50%, -50%) scale(1, 1);
+  }
+}
+//翻转
+@keyframes Flop {
+  0% {
+    transform: translate(-50%, -50%) rotateY(90deg);
+  }
+  33% {
+    transform: translate(-50%, -50%) rotateY(0deg);
+  }
+  67% {
+    transform: translate(-50%, -50%) rotateY(-30deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateY(0deg);
+  }
+}
+// 从底部滑入
+@keyframes slideInFromBottom {
+  0% {
+    transform: translate(-50%, 0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+// 摇晃
+@keyframes shake {
+  from, to {
+    transform: translate(-50%, -50%);
+  }
+
+  15%, 45%, 75% {
+    transform: translate(-60%, -50%);
+  }
+
+  30%, 60%, 90% {
+    transform: translate(-40%, -50%);
+  }
+}

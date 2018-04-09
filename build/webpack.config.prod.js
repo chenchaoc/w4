@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-04 15:18:10
+* @Last Modified time: 2018-04-09 18:34:08
 */
 
 import entry from './config/entry.js';
@@ -27,7 +27,7 @@ export default {
     },
     resolve: {
         extensions: [".js", ".jsx", ".css", ".scss"],
-        alias
+        alias, //文件路径别名
     },
     module: {
         rules: loaders,
