@@ -3,11 +3,11 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 10:25:19
+* @Last Modified time: 2018-04-12 11:30:46
 */
 
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //代替ExtractTextPlugin，官方推荐
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //代替ExtractTextPlugin，官方推荐, 支持从异步加载的js中分离出css
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
 import CleanWebpackPlugin from 'clean-webpack-plugin';  //清除dist目录插件
 import ZipWebpackPlugin from 'zip-webpack-plugin';  //打包完成后dist目录压缩成zip

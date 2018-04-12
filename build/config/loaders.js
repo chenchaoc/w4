@@ -3,9 +3,9 @@
 * @Date: 2018-04-03 14:42:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 10:24:58
+* @Last Modified time: 2018-04-12 11:24:24
 */
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //代替ExtractTextPlugin，webpack4官方推荐
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //从js分离出css,代替ExtractTextPlugin,webpack4官方推荐,支持非入口文件的css异步加载
 
 export default [
     { //模块规则

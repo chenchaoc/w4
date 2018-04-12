@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-04-10 16:03:05
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-11 16:00:07
+* @Last Modified time: 2018-04-12 12:09:08
 */
 .dialog-mask {
     position: fixed;
@@ -21,7 +21,7 @@
         border-radius: 8px;
         background: #fff;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.54);
-        padding: 20px;
+        padding: 30px;
         z-index: 3;
         font-size: 16px;
         .dialog-title{
@@ -32,21 +32,21 @@
         .dialog-content{
             margin: 20px 0;
             line-height: 24px;
-            text-indent: 2em;
-            text-align: left;
+            text-align: center;
         }
         .dialog-btn{
             background-color: #E84A01;
-            margin: 0 30%;
+            margin: 0 25%;
             text-align: center;
-            padding: 10px 30px;
+            padding: 10px 20px;
             font-size: 16px;
             border-radius: 4px;
         }
         .if-delete{
             position: absolute;
-            top: 8px;
-            right: 8px;
+            top: 6px;
+            right: 12px;
+            font-size: 18px;
             color: #757575;
             cursor: pointer;
         }

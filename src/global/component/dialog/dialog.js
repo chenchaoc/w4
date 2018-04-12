@@ -3,25 +3,32 @@
 * @Date: 2018-04-10 16:02:57
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 09:57:58
+* @Last Modified time: 2018-04-12 12:07:19
 */
 import './dialog.scss';
-import protoTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class extends React.Component {
     constructor(props) {
         super(props)
     }
     static defaultProps = {
-        //width: 300,
-        //height: 200,
-        //title: '这是dialog标题',
-        //content: '这是dialog正文正文这是dialog正文正文这是dialog正文正文这是dialog正文正文这是dialog正文正文这是dialog正文正文这是dialog正文正文',
         showCloseBtn: true,
-        closeCb: () => { console.log('关闭了') },
+        closeCb: () => {},
         showConfirmBtn: true,
         confirmText: '确认',
-        confirmCb: () => { console.log('确认了') },
+        confirmCb: () => {},
+    }
+    static propTypes = {
+        width: PropTypes.number,
+        height: PropTypes.number,
+        title: PropTypes.string,
+        content: PropTypes.string,
+        showCloseBtn: PropTypes.bool,
+        closeCb: PropTypes.func,
+        showConfirmBtn: PropTypes.bool,
+        confirmText: PropTypes.string,
+        confirmCb: PropTypes.func,
     }
     removeDialogDom() {
         return new Promise((resolve, reject) => {
@@ -45,9 +52,9 @@ export default class extends React.Component {
         const { width, height, title, content, showCloseBtn, showConfirmBtn, confirmText } = this.props;
         return (
             <div className="dialog-mask" ref="dialog">
-                <div className="dialog-wrapper">
-                    <div className="dialog-title">{ title }</div>
-                    <div className="dialog-content">{ content }</div>
+                <div className="dialog-wrapper" style={ width || height ? { width: `${width}px`, height: `${height}px`} : null}>
+                    { title ? <div className="dialog-title">{ title }</div> : null}
+                    { content ? <div className="dialog-content">{ content }</div> : null}
                     { showConfirmBtn ? <div className="dialog-btn color-ff" onClick={ () => this.handleConfirm() }>{confirmText}</div> : null }
                     { showCloseBtn ? <i className="iconfont if-delete" onClick={ () => this.handleClose() }></i> : null }
                 </div>
