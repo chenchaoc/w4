@@ -12,6 +12,5 @@ export default {
     ftp: {
         host: '60.205.34.245', //ip
         user: 'bxu2442440084', //用户名
-        password: 'cc08098681' //密码
     }
 }
