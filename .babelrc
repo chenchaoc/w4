@@ -10,6 +10,7 @@
         }],
         //不写的话webpack配置文件不能使用es6语法
         "es2015",
+        "stage-0",
         //babel-preset-react 一定要install
         "react",
     ],

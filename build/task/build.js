@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:38:30
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 18:49:05
+* @Last Modified time: 2018-04-12 18:45:55
 */
 import webpack from 'webpack';
 import webpackConfig from '../webpack.config.prod.js';
@@ -33,7 +33,7 @@ webpack(webpackConfig, function(error,stats){
     }
     //集成发版
     if( envName == 'prod'){
-        //deploy();
+        deploy();
     } else {
         //upload() 需配置好上传的ip和后端的.do处理文件再运行
     }

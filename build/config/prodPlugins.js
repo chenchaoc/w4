@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 16:52:23
+* @Last Modified time: 2018-04-12 18:49:12
 */
 
 import webpack from 'webpack';
@@ -46,6 +46,6 @@ export default [
     ),
     new ZipWebpackPlugin({
         path: '../uploadZip',  //相对于根目录
-        filename: 'react-app.zip'
+        filename: 'w4.zip'
     }),
 ]
