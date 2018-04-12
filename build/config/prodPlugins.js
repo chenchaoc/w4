@@ -3,32 +3,33 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 11:30:46
+* @Last Modified time: 2018-04-12 16:52:23
 */
 
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //代替ExtractTextPlugin，官方推荐, 支持从异步加载的js中分离出css
-import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
+//import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
 import CleanWebpackPlugin from 'clean-webpack-plugin';  //清除dist目录插件
 import ZipWebpackPlugin from 'zip-webpack-plugin';  //打包完成后dist目录压缩成zip
 import ManifestPlugin from 'webpack-manifest-plugin'; //文件映射路径
 import { envName } from './env.js';
 
 export default [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
+    //提取出来的样式放在[name].css文件中*/   For long term caching use filename: "[contenthash].css". Optionally add [name].
+    new MiniCssExtractPlugin({
+        filename: '[name]_[contenthash:8].css'
     }),
-    new MiniCssExtractPlugin("[name]_[chunkhash:8].css"), //提取出来的样式放在[name].css文件中*/
-    new webpack.DefinePlugin({
+    //webpack4中process.env.NODE_ENV默认为production
+    /*new webpack.DefinePlugin({
         __DEV__: false,
         __PROD__: true,
-    }),
-    new OptimizeCssAssetsPlugin({  //css压缩去除注释
+    }),*/
+    //webpack4默认已压缩成最小
+    /*new OptimizeCssAssetsPlugin({  //css压缩去除注释
         cssProcessor: require('cssnano'),
         cssProcessorOptions: { discardComments: {removeAll: true } },
         canPrint: true            
-    }),    
+    }),*/    
     new ManifestPlugin({
         fileName: 'manifest.json',
         basePath: `${process.cwd()}/dist/`

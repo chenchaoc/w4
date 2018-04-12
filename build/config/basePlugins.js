@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:43:34
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 16:37:50
+* @Last Modified time: 2018-04-12 16:47:56
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -50,9 +50,5 @@ export default [
         failureSound: 'Glass',
         suppressSuccess: true
     }),
-    new webpack.HashedModuleIdsPlugin(), //没有变化的文件hash不会更改，配合下面的使用,千辛万苦找了几年~ ~
-    // new webpack.optimize.CommonsChunkPlugin({
-    //     names: ['common','vendor'],
-    //     minChunks: Infinity
-    // })            
+    new webpack.HashedModuleIdsPlugin(),
 ]

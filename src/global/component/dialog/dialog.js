@@ -3,7 +3,7 @@
 * @Date: 2018-04-10 16:02:57
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 12:07:19
+* @Last Modified time: 2018-04-12 16:04:53
 */
 import './dialog.scss';
 import PropTypes from 'prop-types';
@@ -23,7 +23,7 @@ export default class extends React.Component {
         width: PropTypes.number,
         height: PropTypes.number,
         title: PropTypes.string,
-        content: PropTypes.string,
+        content: PropTypes.string.isRequired,
         showCloseBtn: PropTypes.bool,
         closeCb: PropTypes.func,
         showConfirmBtn: PropTypes.bool,
@@ -32,8 +32,7 @@ export default class extends React.Component {
     }
     removeDialogDom() {
         return new Promise((resolve, reject) => {
-            document.body.removeChild(this.refs.dialog.parentNode)
-            resolve()
+            resolve(document.body.removeChild(this.refs.dialog.parentNode))
         })
     }
     handleClose() {

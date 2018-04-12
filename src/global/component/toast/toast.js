@@ -3,16 +3,17 @@
 * @Date: 2018-04-09 18:36:27
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 09:58:01
+* @Last Modified time: 2018-04-12 16:07:11
 */
 import './toast.scss';
 import PropTypes from 'prop-types'
+
 export default class extends React.Component {
     constructor(props) {
         super(props);
     }
     static propTypes = {
-        text: PropTypes.string, //提示内容
+        text: PropTypes.string.isRequired, //提示内容
         type: PropTypes.oneOf(['info', 'success', 'warning', 'error']), //类型
     }
     static defaultProps = {
