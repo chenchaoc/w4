@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-04-09 18:36:39
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-09 18:38:03
+* @Last Modified time: 2018-04-10 15:35:51
 */
 
 $prefixCls: 'toast';
@@ -13,11 +13,10 @@ $prefixCls: 'toast';
   left: 50%;
   top: 40%;
   width: 15%;
-  line-height: 24px;
-  font-size: 20px;
-  
-  transform: translate3D(-50%, -50%, 0);
-  z-index: 110;    
+  line-height: 20px;
+  font-size: 16px;
+  transform: translate(-50%, -50%);
+  z-index: 1100;    
 }
 .#{$prefixCls}-wrapper {
   position: absolute;
@@ -26,38 +25,32 @@ $prefixCls: 'toast';
   top: 30%;
   margin: 0;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px;
   background: rgba(0,0,0, .7);
   border-radius: 10px;
   text-align: center;
   color: #fff;
-  z-index: 1110;
-  transition: all .3s;
-  transform: translate3D(-50%, -50%, 0) scale(1, 1);
-
-  &.leave {
-    transform: translate3D(-50%, -100%, 0);
-    opacity: 0;
-  }
+  z-index: 1111;
+  transform: translate3D(-50%, -50%, 0);
 
   // 正常提示
   &.info {
-    animation: Flop 2s infinite;
+    animation: Flop 2s;
   }
 
   // 成功提示
   &.success {
-    animation: BombIn 2s infinite;
+    animation: BombIn 2s;
   }
 
   // 警告提示⚠️
   &.warning {
-    animation: slideInFromBottom 2s infinite;
+    animation: slideInFromBottom 2s ;
   }
 
   // 错误提示
   &.error {
-    animation: shake 2s infinite;
+    animation: shake 2s;
   }
   .#{$prefixCls}-content {
     text-align: center;

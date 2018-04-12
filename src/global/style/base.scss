@@ -1,0 +1,115 @@
+/*
+* @Author: chenchao
+* @Date:   2018-04-11 11:54:58
+* @Last Modified by:   chenchao
+* @Last Modified time: 2018-04-11 15:52:27
+*/
+.color-base {
+    color: #E84A01 !important;
+}
+
+.color-ff {
+    color: #ffffff !important;
+}
+
+.color-21 {
+    color: #212121 !important;
+}
+
+.color-75 {
+    color: #757575 !important;
+}
+
+.color-21 {
+    color: #212121 !important;
+}
+
+.color-21 {
+    color: #212121 !important;
+}
+
+.font-12 {
+    font-size: 12px !important;
+}
+
+.font-14 {
+    font-size: 16px !important;
+}
+
+.font-16 {
+    font-size: 16px !important;
+}
+
+.font-18 {
+    font-size: 12px !important;
+}
+
+.font-20 {
+    font-size: 16px !important;
+}
+
+.font-22 {
+    font-size: 16px !important;
+}
+
+.font-bold {
+    font-weight: bold !important;
+}
+
+.border-t-e6 {
+    border-left: 1px solid #E6E6E6 !important;
+}
+
+.border-l-e6 {
+    border-left: 1px solid #E6E6E6 !important;
+}
+
+.border-r-e6 {
+    border-right: 1px solid #E6E6E6 !important;
+}
+
+.border-b-e6 {
+    border-bottom: 1px solid #E6E6E6 !important;
+}
+
+.bg-c-ff {
+    background-color: #fff !important;
+}
+
+/* 清除浮动 */
+.clearfix {
+    &:before, &:after {
+        content: '';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.float-l {
+    float: left;
+}
+
+.float-r {
+    float: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+/*超过长度省略号*/
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+

@@ -3,17 +3,16 @@
 * @Date: 2018-04-04 15:42:10
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-09 20:44:40
+* @Last Modified time: 2018-04-12 10:00:48
 */
-
+import './login.scss';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { goLogin } from '../../actions.js';
 //import {Redirect,Switch,Link,Route} from 'react-router-dom';
-// import toast from '@globalcomponent/toast/index.js';
-// toast({
-//     content: '我错了啦啦啦啦'
-// })
+import toast from '@globalcomponent/toast/index.js';
+import dialog from '@globalcomponent/dialog/index.js';
+
 class Login extends React.Component {
     constructor(props) {
         super(props)
@@ -29,18 +28,29 @@ class Login extends React.Component {
         history.push('/content');
     }
     componentDidMount() {
-        //console.log(this.props)
+
     }
     changeHandle(e) {
         this.setState({
             a: e.target.value
         })
     }
+    aa() {
+        toast('我知道了呵呵呵呵')
+        //toast('啦啦啦啦', {type: 'info'})
+    }
+    bb() {
+        dialog({
+            title: '付款信息',
+            content: '对不起，余额不足，请充值！'
+        })
+    }
     render() {
         return (
             <div>
+                <div onClick={() => this.aa()}>toast</div>
+                <div onClick={() => this.bb()}>dialog</div>
                 <h3 ref={d => (this.dom = d)}>我是登录页面</h3>
-                <i className={classnames('iconfont',{'if-close':true})} style={{color:'blue'}}></i>
                 <div>
                     用户名<input type="text" ref="username" value={this.state.a} onChange={ (e) => { this.changeHandle(e) } }/>
                 </div>

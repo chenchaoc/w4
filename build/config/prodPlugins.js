@@ -3,11 +3,11 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-04 11:47:07
+* @Last Modified time: 2018-04-12 10:25:19
 */
 
 import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //代替ExtractTextPlugin，官方推荐
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
 import CleanWebpackPlugin from 'clean-webpack-plugin';  //清除dist目录插件
 import ZipWebpackPlugin from 'zip-webpack-plugin';  //打包完成后dist目录压缩成zip
@@ -19,7 +19,7 @@ export default [
       minimize: true,
       debug: false
     }),
-    new ExtractTextPlugin("[name]_[chunkhash:8].css",{allChunks: true}), //提取出来的样式放在[name].css文件中*/
+    new MiniCssExtractPlugin("[name]_[chunkhash:8].css"), //提取出来的样式放在[name].css文件中*/
     new webpack.DefinePlugin({
         __DEV__: false,
         __PROD__: true,

@@ -3,7 +3,7 @@
 * @Date: 2018-04-02 18:23:22
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 11:41:35
+* @Last Modified time: 2018-04-12 10:28:36
 */
 
 import express from 'express';
@@ -37,6 +37,6 @@ app.use(webpackHotMiddleware(compiler, {
     log: false //如果不写则会报错  opts.log is not a function 官方文档：A function used to log lines, pass false to disable. Defaults to console.log
 }))
 
-app.listen(3000, function() {
-    console.log('Example app listening on port http://10.7.248.232:3000')
+app.listen(3838, function() {
+    console.log('Example app listening on port http://10.7.248.232:3838')
 })

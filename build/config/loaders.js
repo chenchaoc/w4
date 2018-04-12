@@ -3,9 +3,9 @@
 * @Date: 2018-04-03 14:42:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 15:50:53
+* @Last Modified time: 2018-04-12 10:24:58
 */
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //代替ExtractTextPlugin，webpack4官方推荐
 
 export default [
     { //模块规则
@@ -19,16 +19,10 @@ export default [
         }        
     }, {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({ 
-            fallback: 'style-loader',
-            use: ['css-loader','postcss-loader']
-        })
+        use: [ MiniCssExtractPlugin.loader,'css-loader','postcss-loader']
     }, {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({ 
-            fallback: 'style-loader',
-            use: ['css-loader','postcss-loader','sass-loader']
-        }),
+        use: [ MiniCssExtractPlugin.loader,'css-loader','postcss-loader','sass-loader']
     }, {
         test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg|swf|jpeg)$/,
         loader: 'file-loader',
