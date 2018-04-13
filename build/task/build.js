@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:38:30
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 18:45:55
+* @Last Modified time: 2018-04-13 17:30:49
 */
 import webpack from 'webpack';
 import webpackConfig from '../webpack.config.prod.js';

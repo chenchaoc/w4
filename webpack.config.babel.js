@@ -3,9 +3,9 @@
 * @Date: 2018-03-30 16:56:57
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 19:24:59
+* @Last Modified time: 2018-04-13 15:57:11
 */
-
+//练习模式  架构模式在build文件夹里面
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
@@ -28,7 +28,12 @@ export default {
         publicPath: '/', //启用webpack-dev-middleware和webpack-hot-middleware时的根目录
     },
     resolve: {
-        extensions: ['.js', '.jsx'] //自动解析确定的扩展
+        extensions: ['.js', '.jsx'], //自动解析确定的扩展
+        alias: {
+            '@global': `${process.cwd()}/src/global`,
+            '@globalcomponent': `${process.cwd()}/src/global/component`, 
+            'cm': `${process.cwd()}/src/global/cm/cm.js`           
+        }
     },
     stats: "errors-only", 
     module: {
@@ -39,7 +44,7 @@ export default {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['react','env']
+                        presets: ['react','stage-0']
                     }                    
                 }
             }, {
@@ -83,6 +88,7 @@ export default {
         new webpack.ProvidePlugin({  //全局载入的可以调用的组件名称
             React: 'react',
             ReactDOM: 'react-dom',
+            cm: 'cm'
         })        
     ]
 }

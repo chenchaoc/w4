@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-04-10 16:03:05
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-12 12:09:08
+* @Last Modified time: 2018-04-13 16:46:11
 */
 .dialog-mask {
     position: fixed;
@@ -14,7 +14,7 @@
     z-index: 1000;
     .dialog-wrapper{
         position: fixed;
-        width: 300px;
+        width: 18%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -22,7 +22,7 @@
         background: #fff;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.54);
         padding: 30px;
-        z-index: 3;
+        z-index: 1001;
         font-size: 16px;
         .dialog-title{
             font-size: 20px;

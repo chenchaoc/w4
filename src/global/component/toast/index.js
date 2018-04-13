@@ -3,7 +3,7 @@
 * @Date: 2018-04-09 18:36:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-11 18:39:23
+* @Last Modified time: 2018-04-13 16:31:19
 */
 
 import Toast from './toast.js';
@@ -26,6 +26,7 @@ export default function(text, options) {
         }
     }
     let container = document.createElement('div');
+    container.classList.add('toast-box');
     document.body.appendChild(container);
     ReactDOM.render(<Toast { ...o } />, container);
     setTimeout(() => {

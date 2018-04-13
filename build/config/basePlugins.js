@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:43:34
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 16:47:56
+* @Last Modified time: 2018-04-13 17:19:23
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -27,8 +27,9 @@ export default [
     new webpack.ProvidePlugin({  //全局载入的可以调用的组件名称
         React: 'react',
         ReactDOM: 'react-dom',
-        util: 'util',
+        utils: 'utils',
         cm: 'cm',
+        ac: 'ac'
     }),
     new HtmlWebpackPlugin({  //自动生成html文件并载入打包后的css js
         title: 'webpack4-study',

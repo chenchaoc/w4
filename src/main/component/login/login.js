@@ -3,7 +3,7 @@
 * @Date: 2018-04-04 15:42:10
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 16:46:50
+* @Last Modified time: 2018-04-13 16:49:46
 */
 import classnames from 'classnames';
 import { connect } from 'react-redux';
@@ -42,7 +42,7 @@ class Login extends React.Component {
         dialog({
             //width: 400,
             //height: 250,
-            //title: '付款信息',
+            title: '付款信息',
             content: '对不起，余额不足，请充值！对不起，余额不足，请充值！对不起，余额不足，请充值！对不起，余额不足，请充值！对不起，余额不足，请充值！',
             confirmText: '我知道了',
             //showConfirmBtn: false,

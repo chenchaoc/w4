@@ -4,12 +4,12 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open",
-    "middle": "babel-node server.js",
+    "serverdev": "webpack-dev-server --open",
+    "middledev": "babel-node server.js",
     "mdev": "babel-node --presets=env,stage-0 ./build/task/dev.js --dev",
     "mtest": "babel-node --presets=env,stage-0 ./build/task/build.js --test",
     "mbeta": "babel-node --presets=env,stage-0 ./build/task/build.js --beta",
-    "mprod": "babel-node --presets=env,stage-0 --plugins=transform-runtime,add-module-exports ./build/task/build.js --prod"
+    "mprod": "babel-node --presets=env,stage-0 ./build/task/build.js --prod"
   },
   "repository": {
     "type": "git",

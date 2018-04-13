@@ -3,12 +3,12 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 18:49:12
+* @Last Modified time: 2018-04-13 16:54:48
 */
 
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //代替ExtractTextPlugin，官方推荐, 支持从异步加载的js中分离出css
-//import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css压缩工具
 import CleanWebpackPlugin from 'clean-webpack-plugin';  //清除dist目录插件
 import ZipWebpackPlugin from 'zip-webpack-plugin';  //打包完成后dist目录压缩成zip
 import ManifestPlugin from 'webpack-manifest-plugin'; //文件映射路径
@@ -24,12 +24,11 @@ export default [
         __DEV__: false,
         __PROD__: true,
     }),*/
-    //webpack4默认已压缩成最小
-    /*new OptimizeCssAssetsPlugin({  //css压缩去除注释
+    new OptimizeCssAssetsPlugin({  //css压缩去除注释
         cssProcessor: require('cssnano'),
         cssProcessorOptions: { discardComments: {removeAll: true } },
         canPrint: true            
-    }),*/    
+    }),    
     new ManifestPlugin({
         fileName: 'manifest.json',
         basePath: `${process.cwd()}/dist/`

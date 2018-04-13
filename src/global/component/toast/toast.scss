@@ -2,37 +2,27 @@
 * @Author: chenchao
 * @Date:   2018-04-09 18:36:39
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-10 15:35:51
+* @Last Modified time: 2018-04-13 16:28:14
 */
 
 $prefixCls: 'toast';
 
 // Notice
-.#{$prefixCls}-box {
+.#{$prefixCls}-content {
   position: fixed;
   left: 50%;
   top: 40%;
-  width: 15%;
+  min-width: 10%;
+  max-width: 15%;
   line-height: 20px;
   font-size: 16px;
+  padding: 15px;
   transform: translate(-50%, -50%);
-  z-index: 1100;    
-}
-.#{$prefixCls}-wrapper {
-  position: absolute;
-  box-sizing: border-box;
-  left: 50%;
-  top: 30%;
-  margin: 0;
-  width: 100%;
-  padding: 10px;
-  background: rgba(0,0,0, .7);
-  border-radius: 10px;
+  z-index: 1100;
+  background: rgba(0,0,0, .5); 
   text-align: center;
   color: #fff;
-  z-index: 1111;
-  transform: translate3D(-50%, -50%, 0);
-
+  border-radius: 10px;
   // 正常提示
   &.info {
     animation: Flop 2s;
@@ -51,10 +41,6 @@ $prefixCls: 'toast';
   // 错误提示
   &.error {
     animation: shake 2s;
-  }
-  .#{$prefixCls}-content {
-    text-align: center;
-    color: #fff;
   }
 }
 //爆炸入库
