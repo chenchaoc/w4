@@ -3,7 +3,7 @@
 * @Date: 2018-04-04 15:42:10
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 16:49:46
+* @Last Modified time: 2018-04-16 15:17:58
 */
 import classnames from 'classnames';
 import { connect } from 'react-redux';
@@ -12,12 +12,18 @@ import { goLogin } from '../../actions.js';
 import toast from '@globalcomponent/toast/index.js';
 import dialog from '@globalcomponent/dialog/index.js';
 //console.log(process.env.NODE_ENV)
+//console.log(utils.fullDate('1403848644115'));
+//console.log(utils.formatMobile(1403841112222));
+//console.log(utils.add0(2));
+//console.log(utils.jsEncrypt('jdjdjdskskslslss'));
+//console.log(utils.jsDecrypt(utils.jsEncrypt('d7d88f7f7888s')));
 class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             a: 1
         }
+        console.log(1)
     }
     goLogin(){
         const { dispatch, history } = this.props;
@@ -26,8 +32,11 @@ class Login extends React.Component {
         dispatch(goLogin());
         history.push('/content');
     }
+    componentWillMount() {
+        console.log(2)
+    }
     componentDidMount() {
-
+        console.log(3)
     }
     changeHandle(e) {
         this.setState({
@@ -46,6 +55,9 @@ class Login extends React.Component {
             content: '对不起，余额不足，请充值！对不起，余额不足，请充值！对不起，余额不足，请充值！对不起，余额不足，请充值！对不起，余额不足，请充值！',
             confirmText: '我知道了',
             //showConfirmBtn: false,
+            confirmCb: () => {
+                //console.log('确定确定了')
+            }
         })
     }
     render() {
@@ -57,6 +69,7 @@ class Login extends React.Component {
                 <div>
                     用户名<input type="text" ref="username" value={this.state.a} onChange={ (e) => { this.changeHandle(e) } }/>
                 </div>
+                {this.state.a}
                 <div>
                     密码<input type="password" ref="password" />
                 </div>

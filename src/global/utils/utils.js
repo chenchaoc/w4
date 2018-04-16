@@ -3,9 +3,9 @@
 * @Date: 2018-04-03 14:45:24
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-03 14:50:31
+* @Last Modified time: 2018-04-16 15:17:20
 */
-/*
+import JSEncrypt from 'jsencrypt';
 
 /**
  * [formatInput 限制只能输入>=0的整数]
@@ -365,25 +365,25 @@ export function versionCompare(left, right) {
  * @returns {Object} params
  */
 export function paramOfUrl(url) {
-  url = url || window.location.href
-  const paramSuit = url.substring(url.indexOf('?') + 1).split('&')
-  let paramObj = {}
-  for (let i = 0; i < paramSuit.length; i++) {
-    const param = paramSuit[i].split('=')
-    if (param.length == 2) {
-      const key = decodeURIComponent(param[0])
-      const val = decodeURIComponent(param[1])
-      if (paramObj.hasOwnProperty(key)) {
-        if (!(paramObj[key] instanceof Array)) {
-          paramObj[key] = [paramObj[key]]
-        }
-        paramObj[key].push(val)
-      } else {
-        paramObj[key] = val
+    url = url || window.location.href
+    const paramSuit = url.substring(url.indexOf('?') + 1).split('&')
+    let paramObj = {}
+    for (let i = 0; i < paramSuit.length; i++) {
+      const param = paramSuit[i].split('=')
+      if (param.length == 2) {
+          const key = decodeURIComponent(param[0])
+          const val = decodeURIComponent(param[1])
+          if (paramObj.hasOwnProperty(key)) {
+              if (!(paramObj[key] instanceof Array)) {
+              paramObj[key] = [paramObj[key]]
+          }
+              paramObj[key].push(val)
+          } else {
+              paramObj[key] = val
+          }
       }
     }
-  }
-  return paramObj
+    return paramObj
 }
 
 /**
@@ -399,7 +399,7 @@ export function paramOfUrl(url) {
  * fnum(12345.12345, 2) // 12,345.12
  */
 export function fnum(num, fixed = 2) {
-  return isNaN(num) ? '' : Number(num).toFixed(fixed).replace(/(\d{1,3})(?=(\d{3})+(?:$|\.))/g, '$1,');
+    return isNaN(num) ? '' : Number(num).toFixed(fixed).replace(/(\d{1,3})(?=(\d{3})+(?:$|\.))/g, '$1,');
 }
 
 /**
@@ -410,7 +410,7 @@ export function fnum(num, fixed = 2) {
  * 12345555 =>  1234 5555
  */
 export function formatBankcard(v, spaceNum = 4) {
-  return String(v).replace(/\D/g, '').replace(new RegExp(`(\\d{${spaceNum}})(?=\\d)`,'g'), '$1 ');
+    return String(v).replace(/\D/g, '').replace(new RegExp(`(\\d{${spaceNum}})(?=\\d)`,'g'), '$1 ');
 }
 
 /**
@@ -420,7 +420,7 @@ export function formatBankcard(v, spaceNum = 4) {
  * 13333333333 => 133****3333
  */
 export function starMobile(v) {
-  return String(v).replace(/\D/g, '').substr(0,11).replace(new RegExp('(\\d{3})\\d{4}(\\d{4})'),'$1****$2');
+    return String(v).replace(/\D/g, '').substr(0,11).replace(new RegExp('(\\d{3})\\d{4}(\\d{4})'),'$1****$2');
 }
 
 /**
@@ -431,9 +431,67 @@ export function starMobile(v) {
  * 123456 => 123 456
  * 123456789 => 123 4567 89
  */
-export function formatMobile(v){
-  return (String(v).replace(/\D/g, '').substr(0,11).replace(/(\d{3})(\d{0,4})/, '$1 $2 ')).trim();
+export function formatMobile(v) {
+    return (String(v).replace(/\D/g, '').substr(0,11).replace(/(\d{3})(\d{0,4})/, '$1 $2 ')).trim();
 
 }
-
-
+/**
+ * [fullDate 获取完整时间 返回例子：2014年06月27日13时57分24秒]
+ * @param  {[number | string]} v [description]
+ * @return {[string]}   [description]
+ */
+export function fullDate(v) {
+    const t = new Date(Number(v) || new Date().getTime());
+    const year = t.getFullYear();
+    const month = add0(t.getMonth()+1);
+    const date = add0(t.getDate());
+    const hour = add0(t.getHours());
+    const minute = add0(t.getMinutes());
+    const second = add0(t.getSeconds());
+    return `${year}年${month}月${date}日${hour}时${minute}分${second}秒`;
+}
+/**
+ * [add0 小于10的数字加上0]
+ * @param  {[type]} num [description]
+ * @return {[type]}     [description]
+ */
+export function add0(num = Number(num)) {
+    return num >= 10 ? `${num}` : `0${num}`;
+}
+/**
+ * [jsCrypt crypt加密] RSA非对称性加密 前端公钥解密
+ * @param  {[string]} val [description]
+ * @return {[string]}     [description]
+ */
+export function jsEncrypt(val) {
+    let encrypt = new JSEncrypt();
+    const publicKey =  `MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlOJu6TyygqxfWT7eLtGDwajtN
+                        FOb9I5XRb6khyfD1Yt3YiCgQWMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76
+                        xFxdU6jE0NQ+Z+zEdhUTooNRaY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4
+                        gwQco1KRMDSmXSMkDwIDAQAB`;
+    encrypt.setPublicKey(publicKey);
+    return encrypt.encrypt(val);
+}
+/**
+ * [jdDerypt crypt加密] RSA非对称性加密 后端私钥解密
+ * @param  {[string]} val [description]
+ * @return {[string]}     [description]
+ */
+export function jsDecrypt(val) {
+    let decrypt = new JSEncrypt();
+    const privatekey = `MIICXQIBAAKBgQDlOJu6TyygqxfWT7eLtGDwajtNFOb9I5XRb6khyfD1Yt3YiCgQ
+                        WMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76xFxdU6jE0NQ+Z+zEdhUTooNR
+                        aY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4gwQco1KRMDSmXSMkDwIDAQAB
+                        AoGAfY9LpnuWK5Bs50UVep5c93SJdUi82u7yMx4iHFMc/Z2hfenfYEzu+57fI4fv
+                        xTQ//5DbzRR/XKb8ulNv6+CHyPF31xk7YOBfkGI8qjLoq06V+FyBfDSwL8KbLyeH
+                        m7KUZnLNQbk8yGLzB3iYKkRHlmUanQGaNMIJziWOkN+N9dECQQD0ONYRNZeuM8zd
+                        8XJTSdcIX4a3gy3GGCJxOzv16XHxD03GW6UNLmfPwenKu+cdrQeaqEixrCejXdAF
+                        z/7+BSMpAkEA8EaSOeP5Xr3ZrbiKzi6TGMwHMvC7HdJxaBJbVRfApFrE0/mPwmP5
+                        rN7QwjrMY+0+AbXcm8mRQyQ1+IGEembsdwJBAN6az8Rv7QnD/YBvi52POIlRSSIM
+                        V7SwWvSK4WSMnGb1ZBbhgdg57DXaspcwHsFV7hByQ5BvMtIduHcT14ECfcECQATe
+                        aTgjFnqE/lQ22Rk0eGaYO80cc643BXVGafNfd9fcvwBMnk0iGX0XRsOozVt5Azil
+                        psLBYuApa66NcVHJpCECQQDTjI2AQhFc1yRnCU/YgDnSpJVm1nASoRUnU8Jfm3Oz
+                        uku7JUXcVpt08DFSceCEX9unCuMcT72rAQlLpdZir876`;
+    decrypt.setPrivateKey(privatekey);
+    return decrypt.decrypt(val);
+}

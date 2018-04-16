@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-04-10 16:03:05
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-13 16:46:11
+* @Last Modified time: 2018-04-16 10:29:41
 */
 .dialog-mask {
     position: fixed;
@@ -14,8 +14,9 @@
     z-index: 1000;
     .dialog-wrapper{
         position: fixed;
-        width: 18%;
-        top: 50%;
+        min-width: 250px;
+        max-width: 300px;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 8px;

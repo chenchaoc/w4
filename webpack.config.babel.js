@@ -3,7 +3,7 @@
 * @Date: 2018-03-30 16:56:57
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 15:57:11
+* @Last Modified time: 2018-04-13 17:48:43
 */
 //练习模式  架构模式在build文件夹里面
 import path from 'path';
@@ -32,7 +32,8 @@ export default {
         alias: {
             '@global': `${process.cwd()}/src/global`,
             '@globalcomponent': `${process.cwd()}/src/global/component`, 
-            'cm': `${process.cwd()}/src/global/cm/cm.js`           
+            'cm': `${process.cwd()}/src/global/cm/cm.js`,          
+            'ac': `${process.cwd()}/src/global/ac/ac.js`,          
         }
     },
     stats: "errors-only", 
@@ -88,7 +89,8 @@ export default {
         new webpack.ProvidePlugin({  //全局载入的可以调用的组件名称
             React: 'react',
             ReactDOM: 'react-dom',
-            cm: 'cm'
+            cm: 'cm',
+            ac: 'ac'
         })        
     ]
 }
