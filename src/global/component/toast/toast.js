@@ -3,7 +3,7 @@
 * @Date: 2018-04-09 18:36:27
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 16:28:20
+* @Last Modified time: 2018-04-16 16:52:41
 */
 import './toast.scss';
 import PropTypes from 'prop-types'

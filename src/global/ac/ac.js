@@ -3,7 +3,7 @@
 * @Date: 2018-04-13 17:17:43
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 17:18:23
+* @Last Modified time: 2018-04-16 17:33:05
 */
 
 import Loading from '@globalcomponent/loading/loading.js';
@@ -15,8 +15,7 @@ import { Fragment } from 'react';
  * @param  {[function]} importComponent [description]
  * @param  {[object]} p                 [description]
  * @return {[component]}                [description]
- * https://github.com/thejameskyle/react-loadable 这个是别人写的代码分割插件
- * 实测发现必须在根路由 也就是‘/’ import一次scss文件，否则进入二级路由会报错？？
+ * https://github.com/jamiebuilds/react-loadable 官方推荐的异步加载代码分割插件
  */
 export function asyncComponent(importComponent,isLoad=true,delay=500) {
     class AsyncComponent extends React.Component {

@@ -3,7 +3,7 @@
 * @Date: 2018-04-09 18:36:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 16:31:19
+* @Last Modified time: 2018-04-17 16:09:02
 */
 
 import Toast from './toast.js';
@@ -21,16 +21,21 @@ export default function(text, options) {
         options.text = text
         o = options
     } else {
-        o = {
-            text
+        if(typeof text == 'object') {
+            o = text
+        } else {
+            o = {
+                text
+            }
         }
     }
     let container = document.createElement('div');
     container.classList.add('toast-box');
     document.body.appendChild(container);
-    ReactDOM.render(<Toast { ...o } />, container);
-    setTimeout(() => {
-        ReactDOM.unmountComponentAtNode(container);
-        document.body.removeChild(container);
-    }, 2000)
+    ReactDOM.render(<Toast { ...o } />, container, () => {
+        setTimeout(() => {
+            ReactDOM.unmountComponentAtNode(container);
+            document.body.removeChild(container);
+        }, 2000)
+    });
 }

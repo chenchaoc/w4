@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 16:35:13
+* @Last Modified time: 2018-04-17 18:42:42
 */
 
 import entry from './config/entry.js';
@@ -29,8 +29,6 @@ export default {
         alias, //文件路径别名
     },
     devtool: 'source-map',
-    watch: true,
-    stats: 'errors-only',
     module: {
         rules: loaders,
     },

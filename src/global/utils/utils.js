@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:45:24
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-16 15:17:20
+* @Last Modified time: 2018-04-17 11:20:20
 */
 import JSEncrypt from 'jsencrypt';
 
@@ -459,7 +459,7 @@ export function add0(num = Number(num)) {
     return num >= 10 ? `${num}` : `0${num}`;
 }
 /**
- * [jsCrypt crypt加密] RSA非对称性加密 前端公钥解密
+ * [jsCrypt crypt加密] RSA非对称性加密 前端公钥加密
  * @param  {[string]} val [description]
  * @return {[string]}     [description]
  */
