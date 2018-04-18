@@ -4,7 +4,7 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "dev": "babel-node --presets=env,stage-0 ./build/task/dev.js --dev",
+    "dev": "babel-node --presets=env,stage-0 ./build/task/dev.js",
     "test": "babel-node --presets=env,stage-0 ./build/task/build.js --test",
     "beta": "babel-node --presets=env,stage-0 ./build/task/build.js --beta",
     "prod": "babel-node --presets=env,stage-0 ./build/task/build.js --prod"
@@ -64,7 +64,6 @@
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.13",
     "webpack-dev-middleware": "^3.1.0",
-    "webpack-dev-server": "^3.1.1",
     "webpack-hot-middleware": "^2.21.2",
     "webpack-manifest-plugin": "^2.0.0-rc.2",
     "webpack-notifier": "^1.6.0",

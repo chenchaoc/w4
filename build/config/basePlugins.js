@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:43:34
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 17:19:23
+* @Last Modified time: 2018-04-18 15:09:30
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -49,7 +49,7 @@ export default [
         title: '开发服务器',
         successSound: 'Submarine',
         failureSound: 'Glass',
-        suppressSuccess: true
+        suppressSuccess: true,
     }),
     new webpack.HashedModuleIdsPlugin(),
 ]

@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:42:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-18 12:08:07
+* @Last Modified time: 2018-04-18 14:59:42
 */
 import { loader } from 'mini-css-extract-plugin'; //从js分离出css,代替ExtractTextPlugin,webpack4官方推荐,支持非入口文件的css异步加载
 
@@ -15,8 +15,8 @@ export default [
             loader: 'babel-loader?cacheDirectory',
             options: {
                 presets: ['react','stage-0']
-            }                    
-        }        
+            }
+        }
     }, {
         test: /\.css$/,
         use: [{
@@ -29,7 +29,7 @@ export default [
                 plugins() {
                     return [
                         require('autoprefixer')({
-                            browsers: ['last 2 version', 'iOS >= 7', 'Android >= 4']
+                            browsers: ['last 2 version', 'iOS >= 7', 'Android >= 4', 'not ie < 9']
                         })
                     ]
                 }
@@ -47,7 +47,7 @@ export default [
                 plugins() {
                     return [
                         require('autoprefixer')({
-                            browsers: ['last 2 version', 'iOS >= 7', 'Android >= 4', 'not ie < 9', 'Firefox ESR']
+                            browsers: ['last 2 version', 'iOS >= 7', 'Android >= 4', 'not ie < 9']
                         })
                     ]
                 }

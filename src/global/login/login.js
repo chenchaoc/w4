@@ -3,29 +3,30 @@
 * @Date: 2018-04-04 15:42:10
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-18 11:01:26
+* @Last Modified time: 2018-04-18 17:59:35
 */
 import classnames from 'classnames';
 import { connect } from 'react-redux';
-import { goLogin } from '../../redux/actions.js';
 import PropTypes from 'prop-types';
-//import {Redirect,Switch,Link,Route} from 'react-router-dom';
+
+import { goLogin } from '../../redux/actions.js';
 import toast from '@globalcomponent/toast/index.js';
 import dialog from '@globalcomponent/dialog/index.js';
 import ContextTest from './context-test.js';
-import a from '@image/cc.jpg';
+import cc from '@image/cc.jpg';
+
 //console.log(process.env.NODE_ENV)
 //console.log(utils.fullDate('1403848644115'));
 //console.log(utils.formatMobile(1403841112222));
 //console.log(utils.add0(2));
 //console.log(utils.jsEncrypt('jdjdjdskskslslss'));
-//console.log(utils.jsDecrypt(utils.jsEncrypt('d7d88f7f7888s')));
+//console.log(utils.jsDecrypt(utils.jsEncrypt('d7d88f7f7888s')))
+
 class Login extends React.Component {
     constructor(props, ctx) {
         super(props)
         this.state = {
-            a: 1,
-            c: 1
+            a: 1
         }
     }
     goL(){
@@ -33,10 +34,9 @@ class Login extends React.Component {
         console.log("用户名"+this.refs.username.value);
         console.log("密码"+this.refs.password.value);
         dispatch(goLogin());
-        history.push('/content');
+        history.push('/nest');
     }
     componentWillMount() {
-
     }
     componentDidMount() {
 
@@ -74,7 +74,7 @@ class Login extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="app-login">
                 <div onClick={() => this.aa()}>toast</div>
                 <div onClick={() => this.bb()}>dialog</div>
                 <ContextTest></ContextTest>
@@ -89,7 +89,7 @@ class Login extends React.Component {
                 <div>
                     <button onClick={() => this.goL()}>点击登录</button>
                 </div>
-                {/*<img src={a} alt=""/>*/}
+                <img src={cc} alt=""/>
             </div>
         );
     }

@@ -3,9 +3,9 @@
 * @Date: 2018-04-03 14:45:24
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-18 11:22:18
+* @Last Modified time: 2018-04-18 16:08:07
 */
-//import JSEncrypt from 'jsencrypt'; //rsa非对称加密依赖包
+import JSEncrypt from 'jsencrypt'; //rsa非对称加密依赖包
 
 /**
  * [formatInput 限制只能输入>=0的整数]
@@ -463,7 +463,7 @@ export function add0(num = Number(num)) {
  * @param  {[string]} val [description]
  * @return {[string]}     [description]
  */
-/*export function jsEncrypt(val) {
+export function jsEncrypt(val) {
     let encrypt = new JSEncrypt();
     const publicKey =  `MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlOJu6TyygqxfWT7eLtGDwajtN
                         FOb9I5XRb6khyfD1Yt3YiCgQWMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76
@@ -471,13 +471,13 @@ export function add0(num = Number(num)) {
                         gwQco1KRMDSmXSMkDwIDAQAB`;
     encrypt.setPublicKey(publicKey);
     return encrypt.encrypt(val);
-}*/
+}
 /**
  * [jdDerypt crypt加密] RSA非对称性加密 后端私钥解密
  * @param  {[string]} val [description]
  * @return {[string]}     [description]
  */
-/*export function jsDecrypt(val) {
+export function jsDecrypt(val) {
     let decrypt = new JSEncrypt();
     const privatekey = `MIICXQIBAAKBgQDlOJu6TyygqxfWT7eLtGDwajtNFOb9I5XRb6khyfD1Yt3YiCgQ
                         WMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76xFxdU6jE0NQ+Z+zEdhUTooNR
@@ -494,4 +494,4 @@ export function add0(num = Number(num)) {
                         uku7JUXcVpt08DFSceCEX9unCuMcT72rAQlLpdZir876`;
     decrypt.setPrivateKey(privatekey);
     return decrypt.decrypt(val);
-}*/
+}
