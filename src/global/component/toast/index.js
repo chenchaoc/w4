@@ -3,7 +3,7 @@
 * @Date: 2018-04-09 18:36:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-17 16:09:02
+* @Last Modified time: 2018-04-17 18:54:29
 */
 
 import Toast from './toast.js';
@@ -23,7 +23,7 @@ export default function(text, options) {
     } else {
         if(typeof text == 'object') {
             o = text
-        } else {
+        } else if(typeof text == 'string') {
             o = {
                 text
             }

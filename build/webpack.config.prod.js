@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-09 18:34:08
+* @Last Modified time: 2018-04-18 10:22:21
 */
 
 import entry from './config/entry.js';
@@ -19,6 +19,9 @@ export default {
     context: `${process.cwd()}/src`,
     entry,
     optimization,
+    performance: { //The following asset(s) exceed the recommended size limit (244 KiB)  单个文件超过244K不会出现告警
+        hints: false
+    },
     output: {
         path: `${process.cwd()}/dist`,
         publicPath: envConfig.publicPath,

@@ -3,11 +3,11 @@
 * @Date: 2018-04-04 15:31:30
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-16 16:30:09
+* @Last Modified time: 2018-04-18 10:06:02
 */
 import { Fragment } from 'react';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-import store from './store.js';
+import store from './redux/store.js';
 import { Provider } from 'react-redux';
 
 const Login = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-login" */ './component/login/login.js'));

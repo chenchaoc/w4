@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 16:54:48
+* @Last Modified time: 2018-04-18 10:35:22
 */
 
 import webpack from 'webpack';
@@ -29,10 +29,10 @@ export default [
         cssProcessorOptions: { discardComments: {removeAll: true } },
         canPrint: true            
     }),    
-    new ManifestPlugin({
-        fileName: 'manifest.json',
-        basePath: `${process.cwd()}/dist/`
-    }),    
+    // new ManifestPlugin({
+    //     fileName: 'manifest.json',
+    //     basePath: `${process.cwd()}/dist/`
+    // }),    
     new CleanWebpackPlugin(
         ['uploadZip','dist'],  //清空文件夹名称
         {   root: process.cwd(),  //根目录

@@ -3,11 +3,11 @@
 * @Date: 2018-04-04 15:42:10
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-17 18:43:12
+* @Last Modified time: 2018-04-18 11:01:26
 */
 import classnames from 'classnames';
 import { connect } from 'react-redux';
-import { goLogin } from '../../actions.js';
+import { goLogin } from '../../redux/actions.js';
 import PropTypes from 'prop-types';
 //import {Redirect,Switch,Link,Route} from 'react-router-dom';
 import toast from '@globalcomponent/toast/index.js';
@@ -44,11 +44,6 @@ class Login extends React.Component {
     changeHandle(e) {
         this.setState({
             a: e.target.value
-        })
-    }
-    handleClick() {
-        this.setState((prevState) => {
-            return {c: prevState.c + 1}
         })
     }
     static childContextTypes = {
@@ -94,8 +89,6 @@ class Login extends React.Component {
                 <div>
                     <button onClick={() => this.goL()}>点击登录</button>
                 </div>
-                <div onClick={() => this.handleClick()}>state</div>
-                {this.state.c}
                 {/*<img src={a} alt=""/>*/}
             </div>
         );

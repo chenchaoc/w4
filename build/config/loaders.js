@@ -3,9 +3,9 @@
 * @Date: 2018-04-03 14:42:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-17 16:54:19
+* @Last Modified time: 2018-04-18 12:08:07
 */
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //从js分离出css,代替ExtractTextPlugin,webpack4官方推荐,支持非入口文件的css异步加载
+import { loader } from 'mini-css-extract-plugin'; //从js分离出css,代替ExtractTextPlugin,webpack4官方推荐,支持非入口文件的css异步加载
 
 export default [
     { //模块规则
@@ -20,20 +20,38 @@ export default [
     }, {
         test: /\.css$/,
         use: [{
-            loader: MiniCssExtractPlugin.loader
+            loader: loader
         }, {
             loader: 'css-loader'
         }, {
-            loader: 'postcss-loader'
+            loader: 'postcss-loader',
+            options: {
+                plugins() {
+                    return [
+                        require('autoprefixer')({
+                            browsers: ['last 2 version', 'iOS >= 7', 'Android >= 4']
+                        })
+                    ]
+                }
+            }            
         }]
     }, {
         test: /\.scss$/,
         use: [{
-            loader: MiniCssExtractPlugin.loader
+            loader: loader
         }, {
             loader: 'css-loader'
         }, {
-            loader: 'postcss-loader'
+            loader: 'postcss-loader',
+            options: {
+                plugins() {
+                    return [
+                        require('autoprefixer')({
+                            browsers: ['last 2 version', 'iOS >= 7', 'Android >= 4', 'not ie < 9', 'Firefox ESR']
+                        })
+                    ]
+                }
+            }
         }, {
             loader: 'sass-loader'
         }]

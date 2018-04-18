@@ -4,12 +4,10 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "serverdev": "webpack-dev-server --open",
-    "middledev": "babel-node server.js",
-    "mdev": "babel-node --presets=env,stage-0 ./build/task/dev.js --dev",
-    "mtest": "babel-node --presets=env,stage-0 ./build/task/build.js --test",
-    "mbeta": "babel-node --presets=env,stage-0 ./build/task/build.js --beta",
-    "mprod": "babel-node --presets=env,stage-0 ./build/task/build.js --prod"
+    "dev": "babel-node --presets=env,stage-0 ./build/task/dev.js --dev",
+    "test": "babel-node --presets=env,stage-0 ./build/task/build.js --test",
+    "beta": "babel-node --presets=env,stage-0 ./build/task/build.js --beta",
+    "prod": "babel-node --presets=env,stage-0 ./build/task/build.js --prod"
   },
   "repository": {
     "type": "git",
@@ -62,7 +60,8 @@
     "request": "^2.85.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
-    "webpack": "^4.5.0",
+    "webpack": "^4.6.0",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.13",
     "webpack-dev-middleware": "^3.1.0",
     "webpack-dev-server": "^3.1.1",
