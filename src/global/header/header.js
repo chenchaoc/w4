@@ -3,10 +3,10 @@
 * @Date: 2018-04-18 16:25:38
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-19 15:18:28
+* @Last Modified time: 2018-04-20 18:25:53
 */
 import './header.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 export default class extends React.Component {
     constructor(props) {
         super(props)
@@ -20,20 +20,20 @@ export default class extends React.Component {
                     </div>
                     <div className="header-r f-r clearfix">
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <Link to="/home">网站主页</Link>
+                            <NavLink to="/" activeClassName="nav-active" exact>网站主页</NavLink>
                         </div>
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <Link to="/fe-dev">前端开发</Link>
+                            <NavLink to="/fe-dev" activeClassName="nav-active">前端开发</NavLink>
                         </div>
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <Link to="/health">养生健康</Link>
+                            <NavLink to="/health" activeClassName="nav-active">养生健康</NavLink>
                         </div> 
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <Link to="/single-dog">单身狗笔记</Link>
+                            <NavLink to="/single-dog" activeClassName="nav-active">单身笔记</NavLink>
                         </div> 
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <Link to="/she">想念的ta</Link>
-                        </div>                      
+                            <NavLink to="/she" activeClassName="nav-active">想念的ta</NavLink>
+                        </div>
                     </div>
                 </div>
             </header>

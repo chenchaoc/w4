@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:43:34
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-18 15:09:30
+* @Last Modified time: 2018-04-20 18:12:30
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -32,7 +32,7 @@ export default [
         ac: 'ac'
     }),
     new HtmlWebpackPlugin({  //自动生成html文件并载入打包后的css js
-        title: 'webpack4-study',
+        title: '个人网站',
         filename: 'index.html',
         template: 'index.html',
         inject: 'body',  //默认插入body底部 选项：true, body, head, false

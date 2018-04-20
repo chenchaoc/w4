@@ -3,31 +3,36 @@
 * @Date: 2018-04-18 17:09:45
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-19 15:44:37
+* @Last Modified time: 2018-04-20 18:19:23
 */
 import './router.scss';
-import { Route, Switch } from 'react-router-dom';
-const Login = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-login" */ '@global/login/login.js'));
-const Nest = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-nest" */ '../nest/nest.js'));
-import ygfp from '@image/ygfp.jpg';
-console.log(ygfp)
+import { Route, Switch, Redirect } from 'react-router-dom';
+const Home = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-home" */ '../home/views/home.js'));
+const FeDev = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-fedev" */ '../fe-dev/views/fe-dev.js'));
+const Health = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-health" */ '../health/views/health.js'));
+const SingleDog = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-singledog" */ '../single-dog/views/single-dog.js'));
+const She = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-she" */ '../she/views/she.js'));
+//const Login = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-login" */ '@global/login/login.js'));
+//const Nest = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-nest" */ '../nest/nest.js'));
+
 export default class extends React.Component {
     constructor(props) {
         super(props)
     }
     render() {
         return (
-            <div className="app-content">
-                <div className="content-banner">
-                    <img className="w100-h100" src={ygfp} alt="云谷飞瀑"/>
-                </div>
-                <div className="content-box main-box">
+            <section className="app-content">
+                <div className="content-box">
                     <Switch>
-                        <Route path="/" exact component={Login} />
-                        <Route path="/nest" component={Nest} />
+                        <Route path="/" exact component={Home} />
+                        <Route path="/fe-dev" exact component={FeDev} />
+                        <Route path="/health" exact component={Health} />
+                        <Route path="/single-dog" exact component={SingleDog} />
+                        <Route path="/she" exact component={She} />
+                        <Redirect to="/"></Redirect>
                     </Switch>
                 </div>
-            </div>
+            </section>
         )
     }
 }

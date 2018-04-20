@@ -2,13 +2,15 @@
 * @Author: chenchao
 * @Date:   2018-04-19 14:44:28
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-19 15:32:01
+* @Last Modified time: 2018-04-20 18:25:03
 */
 .app-header{
     line-height: 60px;
     margin-bottom: -60px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    .nav-item{
-
+    //box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    .nav-active{
+        font-weight: bold;
+        color: #1bd267;
+        font-size: 16px;
     }
 }
