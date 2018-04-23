@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:45:13
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-17 16:35:12
+* @Last Modified time: 2018-04-23 15:42:49
 */
 
 import axios from 'axios';
@@ -32,8 +32,8 @@ export function changeDocTitle(title) {
  * @param  {Object} options [axios设置]
  * @return {Promise}     [返回结果]
  */
-export function ajax(url,data={},options={}){
-    return axios.post(url,Object.assign({}, {_t: new Date().getTime()}, data),...options).then(res => res.data)
+export function ajax(url, data={}, options={}){
+    return axios.post(url, Object.assign({}, {_t: new Date().getTime()}, data), ...options).then(res => res.data)
 }
 /**
  * [ajaxOrder 按顺序发送ajax并执行每个回调，最终返回返回值的数组]

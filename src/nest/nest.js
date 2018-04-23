@@ -3,7 +3,7 @@
 * @Date: 2018-04-04 16:13:56
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-18 18:54:00
+* @Last Modified time: 2018-04-23 11:58:16
 */
 import { connect } from 'react-redux';
 import { Fragment } from 'react';
@@ -15,7 +15,7 @@ class Content extends React.Component {
         super(props)
     }
     componentDidMount() {
-        console.log(this.props)
+        //console.log(this.props)
     }
     render() {
         const { isLogin } = this.props

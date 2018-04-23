@@ -3,7 +3,7 @@
 * @Date: 2018-03-30 16:59:25
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-18 17:36:32
+* @Last Modified time: 2018-04-23 11:40:55
 */
 import './app.scss';
 import { Fragment } from 'react';
@@ -20,6 +20,7 @@ class App extends React.Component {
         super(props)
     }
     componentDidMount() {
+        
     }
     render(){
         return (

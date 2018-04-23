@@ -3,7 +3,7 @@
 * @Date: 2018-04-18 17:09:45
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-20 18:19:23
+* @Last Modified time: 2018-04-23 17:53:17
 */
 import './router.scss';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -13,7 +13,7 @@ const Health = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-
 const SingleDog = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-singledog" */ '../single-dog/views/single-dog.js'));
 const She = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-she" */ '../she/views/she.js'));
 //const Login = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-login" */ '@global/login/login.js'));
-//const Nest = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-nest" */ '../nest/nest.js'));
+const Nest = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-nest" */ '../nest/nest.js'));
 
 export default class extends React.Component {
     constructor(props) {
@@ -29,6 +29,7 @@ export default class extends React.Component {
                         <Route path="/health" exact component={Health} />
                         <Route path="/single-dog" exact component={SingleDog} />
                         <Route path="/she" exact component={She} />
+                        <Route path="/nest" component={Nest} />
                         <Redirect to="/"></Redirect>
                     </Switch>
                 </div>

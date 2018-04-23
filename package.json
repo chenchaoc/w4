@@ -4,7 +4,7 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "dev": "babel-node --presets=env,stage-0 ./build/task/dev.js",
+    "dev": "babel-node --presets=env,stage-0 ./build/task/dev.js --dev",
     "test": "babel-node --presets=env,stage-0 ./build/task/build.js --test",
     "beta": "babel-node --presets=env,stage-0 ./build/task/build.js --beta",
     "prod": "babel-node --presets=env,stage-0 ./build/task/build.js --prod"
@@ -60,6 +60,7 @@
     "request": "^2.85.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.13",

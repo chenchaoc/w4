@@ -1,0 +1,18 @@
+/*
+* @Author: chenchao
+* @Date:   2018-04-23 18:32:23
+* @Last Modified by:   chenchao
+* @Last Modified time: 2018-04-23 19:06:32
+*/
+.list-item{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .item-img{
+
+    }
+    .item-r{
+        flex: 1;
+        padding-left: 20px;
+    }
+}
