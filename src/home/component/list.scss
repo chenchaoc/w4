@@ -2,17 +2,39 @@
 * @Author: chenchao
 * @Date:   2018-04-23 18:32:23
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-23 19:06:32
+* @Last Modified time: 2018-04-24 10:29:27
 */
 .list-item{
     display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:hover{
+        background-color: #ebebeb;
+    }
     .item-img{
 
     }
     .item-r{
         flex: 1;
         padding-left: 20px;
+        .item-title{
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .item-content{
+            //text-indent: 2em;
+            line-height: 32px;
+            max-height: 120px;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;    /* 数值代表显示几行 */
+            -webkit-box-orient: vertical;            
+        }
+        .item-time{
+            line-height: 40px;
+        }
     }
 }

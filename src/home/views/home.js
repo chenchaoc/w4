@@ -3,7 +3,7 @@
 * @Date: 2018-04-20 16:18:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 19:02:52
+* @Last Modified time: 2018-04-24 17:25:51
 */
 import './home.scss';
 import ygfp from '@image/ygfp.jpg';
@@ -19,11 +19,11 @@ export default class extends React.Component {
         }
     }
     componentDidMount() {
-        api('homeList').then((d) => {
+/*        api('homeList').then((d) => {
             this.setState({
                 lists: d.list
             })
-        })
+        })*/
         // api('all').then((r) => {
         //     console.log(r)
         // })

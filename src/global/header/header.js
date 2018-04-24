@@ -3,7 +3,7 @@
 * @Date: 2018-04-18 16:25:38
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 12:09:40
+* @Last Modified time: 2018-04-24 16:44:28
 */
 import './header.scss';
 import classnames from 'classnames';
@@ -32,6 +32,13 @@ export default class extends React.Component {
             }
         }
     }
+    handleActive(match, location) {
+        if (location.pathname == '/' || location.pathname.includes('/home')) {            
+            return true
+        } else {
+            return false
+        }
+    }
     shouldComponentUpdate(nextProps, nextState) {
         const { lc } = this.state
         if ( lc == location.href) {
@@ -58,22 +65,22 @@ export default class extends React.Component {
                     </div>
                     <div className="header-r f-r clearfix">
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <NavLink to="/" activeClassName="nav-active" exact>网站主页</NavLink>
+                            <NavLink to="/" activeClassName="nav-active" exact isActive={(match,locatin) => this.handleActive(match,locatin)}>网站主页</NavLink>
                         </div>
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <NavLink to="/fe-dev" activeClassName="nav-active">前端开发</NavLink>
+                            <NavLink to="/fe-dev" activeClassName="nav-active" exact>前端开发</NavLink>
                         </div>
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <NavLink to="/health" activeClassName="nav-active">养生健康</NavLink>
+                            <NavLink to="/health" activeClassName="nav-active" exact>养生健康</NavLink>
                         </div> 
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <NavLink to="/single-dog" activeClassName="nav-active">单身笔记</NavLink>
+                            <NavLink to="/single-dog" activeClassName="nav-active" exact>单身笔记</NavLink>
                         </div> 
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <NavLink to="/she" activeClassName="nav-active">想念的ta</NavLink>
+                            <NavLink to="/she" activeClassName="nav-active" exact>想念的ta</NavLink>
                         </div>
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <NavLink to="/nest" activeClassName="nav-active">嵌套路由</NavLink>
+                            <NavLink to="/nest" activeClassName="nav-active" exact>嵌套路由</NavLink>
                         </div>                        
                     </div>
                 </div>
