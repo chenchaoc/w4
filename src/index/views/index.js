@@ -1,11 +1,11 @@
 /*
 * @Author: chenchao
-* @Date: 2018-04-20 16:18:14
+* @Date: 2018-04-25 10:47:17
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-24 17:25:51
+* @Last Modified time: 2018-04-25 11:26:14
 */
-import './home.scss';
+import './index.scss';
 import ygfp from '@image/ygfp.jpg';
 import api from '../api.js';
 import List from '../component/list.js';

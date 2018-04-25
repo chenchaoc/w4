@@ -1,11 +1,10 @@
 /*
 * @Author: chenchao
-* @Date: 2018-04-18 18:47:54
+* @Date: 2018-04-25 14:26:30
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 11:58:35
+* @Last Modified time: 2018-04-25 14:27:44
 */
-
 export default class One extends React.Component {
     constructor(props) {
         super(props)
@@ -13,7 +12,7 @@ export default class One extends React.Component {
     render() {
         return (
             <div>
-                111111
+                BbBbBbBbBbBbBbBbBb
             </div>
         )
     }

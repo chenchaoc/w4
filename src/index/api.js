@@ -3,7 +3,7 @@
 * @Date: 2018-04-20 16:10:36
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 18:12:22
+* @Last Modified time: 2018-04-24 18:30:44
 */
 
 let baseUrl = ''
@@ -13,7 +13,8 @@ if (process.env.NODE_ENV == 'development' || process.env.NODE_ENV == 'production
 
 const apiMap = {
     all: 'all',
-    homeList: 'homeList'
+    homeList: 'homeList',
+    itemInfo: 'itemInfo'
 }
 
 export default function(name, ...arg) {

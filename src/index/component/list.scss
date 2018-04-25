@@ -1,8 +1,8 @@
 /*
 * @Author: chenchao
-* @Date:   2018-04-23 18:32:23
+* @Date:   2018-04-25 10:47:47
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-24 10:29:27
+* @Last Modified time: 2018-04-25 10:48:57
 */
 .list-item{
     display: flex;
@@ -24,14 +24,14 @@
             font-size: 20px;
         }
         .item-content{
-            //text-indent: 2em;
-            line-height: 32px;
+            //display: -webkit-box;
+            //-webkit-box-orient: vertical;
+            //-webkit-line-clamp: 4;
+            line-height: 30px;
             max-height: 120px;
-            overflow : hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;    /* 数值代表显示几行 */
-            -webkit-box-orient: vertical;            
+            height: 120px;
+            //overflow : hidden;
+            //text-overflow: ellipsis;
         }
         .item-time{
             line-height: 40px;
