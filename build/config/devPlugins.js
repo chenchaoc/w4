@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:43:47
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 10:32:16
+* @Last Modified time: 2018-04-29 11:17:09
 */
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'; //代替ExtractTextPlugin，官方推荐, 支持从异步加载的js中分离出css

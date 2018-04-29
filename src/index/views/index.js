@@ -3,12 +3,12 @@
 * @Date: 2018-04-25 10:47:17
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-25 11:26:14
+* @Last Modified time: 2018-04-29 11:34:27
 */
 import './index.scss';
 import ygfp from '@image/ygfp.jpg';
 import api from '../api.js';
-import List from '../component/list.js';
+import List from '../component/list';
 import { Fragment } from 'react';
 
 export default class extends React.Component {
@@ -19,11 +19,11 @@ export default class extends React.Component {
         }
     }
     componentDidMount() {
-/*        api('homeList').then((d) => {
+        api('homeList').then((d) => {
             this.setState({
                 lists: d.list
             })
-        })*/
+        })
         // api('all').then((r) => {
         //     console.log(r)
         // })

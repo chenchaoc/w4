@@ -3,7 +3,7 @@
 * @Date: 2018-04-25 11:01:08
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-25 16:18:23
+* @Last Modified time: 2018-04-29 12:51:39
 */
 import { Fragment } from 'react';
 import { Route, Switch, Link, Redirect } from 'react-router-dom';
@@ -17,14 +17,19 @@ class Poetry extends React.Component {
     constructor(props) {
         super(props)
     }
+    componentDidMount() {
+        //console.log(this.props)
+    }
     render() {
+        const { match } = this.props
         return (
             <Fragment>
                 <Switch>
-                    <Route path="/poetry/info/:itemId" component={PoetryInfo}></Route>
-                    <Route path="/poetry/pic/:itemId" component={PoetryPic}></Route>
-                    <Route path="/poetry" component={PoetryIndex}></Route>
-                    <Redirect to="/poetry"></Redirect>
+                    <Route path={ `${match.url}/info/:itemId` } component={PoetryInfo}></Route>
+                    <Route path={ `${match.url}/pic/:itemId` } component={PoetryPic}></Route>
+                    {/*最基本路由写在最下面 还不能使用exact   f否则子路由无法匹配    我实在是无语了 IndexRoute呢*/}
+                    <Route path={ `${match.url}` } component={PoetryIndex}></Route>
+                    <Redirect to={ `${match.url}` }></Redirect>
                 </Switch>
             </Fragment>
         )

@@ -3,7 +3,7 @@
 * @Date: 2018-03-30 16:59:25
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 11:40:55
+* @Last Modified time: 2018-04-29 12:12:33
 */
 import './app.scss';
 import { Fragment } from 'react';
@@ -18,9 +18,6 @@ import RouterMap from './router/router.js';
 class App extends React.Component {
     constructor(props){
         super(props)
-    }
-    componentDidMount() {
-        
     }
     render(){
         return (

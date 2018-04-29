@@ -3,7 +3,7 @@
 * @Date: 2018-04-25 10:47:42
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-25 10:48:47
+* @Last Modified time: 2018-04-29 11:10:30
 */
 
 import PropTypes from 'prop-types';
@@ -29,7 +29,7 @@ export default class extends React.Component {
     render() {
         const { imgUrl, title, line1, line2, line3, line4,  creatTime, itemId } = this.props;
         return (
-            <a href={`/home/item/${itemId}`}>
+            <a href={`/poetry/info/${itemId}`} target="_blank">
                 <div className="list-item">
                     <img className="item-img" src={imgUrl} alt=""/>
                     <div className="item-r">

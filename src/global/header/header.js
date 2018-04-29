@@ -3,7 +3,7 @@
 * @Date: 2018-04-18 16:25:38
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-25 10:54:40
+* @Last Modified time: 2018-04-29 11:55:20
 */
 import './header.scss';
 import classnames from 'classnames';
@@ -33,7 +33,7 @@ export default class extends React.Component {
         }
     }
     handleActive(match, location) {
-        if (location.pathname == '/' || location.pathname.includes('/home')) {            
+        if (location.pathname == '/') {            
             return true
         } else {
             return false
@@ -65,7 +65,8 @@ export default class extends React.Component {
                     </div>
                     <div className="header-r f-r clearfix">
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
-                            <NavLink to="/" activeClassName="nav-active" exact isActive={(match,locatin) => this.handleActive(match,locatin)}>首页</NavLink>
+                            {/*<NavLink to="/" activeClassName="nav-active" exact isActive={(match,locatin) => this.handleActive(match,locatin)}>首页</NavLink>*/}
+                            <NavLink to="/" activeClassName="nav-active" exact>首页</NavLink>
                         </div>
                         <div className="nav-item f-l d-show pd-l-6 pd-r-6">
                             <NavLink to="/fe-dev" activeClassName="nav-active">前端开发</NavLink>
