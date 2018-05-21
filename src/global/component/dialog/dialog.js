@@ -3,7 +3,7 @@
 * @Date: 2018-04-10 16:02:57
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 16:04:53
+* @Last Modified time: 2018-05-21 18:27:40
 */
 import './dialog.scss';
 import PropTypes from 'prop-types';
@@ -30,22 +30,8 @@ export default class extends React.Component {
         confirmText: PropTypes.string,
         confirmCb: PropTypes.func,
     }
-    removeDialogDom() {
-        return new Promise((resolve, reject) => {
-            resolve(document.body.removeChild(this.refs.dialog.parentNode))
-        })
-    }
-    handleClose() {
-        const { closeCb } = this.props;
-        this.removeDialogDom().then(() => {
-            closeCb();
-        })
-    }
-    handleConfirm() {
-        const { confirmCb } = this.props;
-        this.removeDialogDom().then(() => {
-            confirmCb();
-        })        
+    componentDidMount() {
+        console.log(this.props.confirmCb)
     }
     render() {
         const { width, height, title, content, showCloseBtn, showConfirmBtn, confirmText } = this.props;
@@ -54,8 +40,8 @@ export default class extends React.Component {
                 <div className="dialog-wrapper" style={ width || height ? { width: `${width}px`, height: `${height}px`} : null}>
                     { title ? <div className="dialog-title">{ title }</div> : null}
                     { content ? <div className="dialog-content">{ content }</div> : null}
-                    { showConfirmBtn ? <div className="dialog-btn color-ff" onClick={ () => this.handleConfirm() }>{confirmText}</div> : null }
-                    { showCloseBtn ? <i className="iconfont if-delete" onClick={ () => this.handleClose() }></i> : null }
+                    { showConfirmBtn ? <div className="dialog-btn color-ff" onClick={ () => this.props.confirmCb() }>{confirmText}</div> : null }
+                    { showCloseBtn ? <i className="iconfont if-delete" onClick={ () => this.props.closeCb() }></i> : null }
                 </div>
             </div>
         )

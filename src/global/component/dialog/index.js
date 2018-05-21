@@ -3,9 +3,10 @@
 * @Date: 2018-04-10 16:03:11
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 16:30:52
+* @Last Modified time: 2018-05-21 18:38:10
 */
 import Dialog from './dialog.js';
+
 /**
  * [description]
  * @param  {[object]} options [description]
@@ -18,11 +19,21 @@ import Dialog from './dialog.js';
  *  showConfirmBtn {[string]} [dialog底部按钮] [default: true]
  *  confirmText {[string]} [dialog底部按钮文字] [default: '确认']
  *  confirmCb {[function]} [dialog底部按钮回调函数] [default: () => {}]
- * @return {[type]}         [description]
+ * @return {[Promise]}         [description]
  */
 export default function(options) {
-    let container = document.createElement('div');
-    container.classList.add('dialog-box');
-    document.body.appendChild(container);
-    ReactDOM.render(<Dialog { ...options } />, container);
+    return new Promise((resolve, reject) => {
+        let container = document.createElement('div');
+        document.body.appendChild(container);
+        container.classList.add('dialog-box');
+        let os = Object.assign({}, options, {
+            confirmCb: () => {
+                resolve(ReactDOM.unmountComponentAtNode(container) && document.body.removeChild(container))
+            },
+            closeCb: () => {
+                reject(ReactDOM.unmountComponentAtNode(container) && document.body.removeChild(container))                
+            }
+        })
+        ReactDOM.render(<Dialog { ...os } />, container);
+    })
 }
