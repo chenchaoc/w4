@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-04-10 16:03:05
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-16 10:29:41
+* @Last Modified time: 2018-05-22 15:41:54
 */
 .dialog-mask {
     position: fixed;
@@ -35,13 +35,26 @@
             line-height: 24px;
             text-align: center;
         }
-        .dialog-btn{
-            background-color: #E84A01;
-            margin: 0 25%;
-            text-align: center;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 4px;
+        .btn-wrapper{
+            display: flex;
+            &.btn-sb{
+                justify-content: space-between; 
+            }
+            &.btn-ct{
+                justify-content: center;
+            }
+            .dialog-btn{
+                flex: 1;
+                background-color: #E84A01;
+                text-align: center;
+                font-size: 16px;
+                border-radius: 4px;
+                line-height: 36px;
+                max-width: 120px;
+                &.dialog-btn-l{
+                    background-color: #b2b2b2;
+                }
+            }
         }
         .if-delete{
             position: absolute;

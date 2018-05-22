@@ -3,7 +3,7 @@
 * @Date: 2018-04-09 18:36:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-05-21 16:46:53
+* @Last Modified time: 2018-05-22 17:51:18
 */
 
 import Toast from './toast.js';
@@ -13,12 +13,14 @@ import Toast from './toast.js';
  * @param  {[string]} text    [toast文字]
  * @param  {[object]} options [toast类型]
  * @return {[type]}         [description]
+ * 示例 toast('xxx') | toast('xxx', {type: 'info'}) | toast({text: 'xxx',type: 'info'})
  */
 
 export default function(text, options) {
-    let timer;
-    let o;    
-    timer && clearTimeout(this.timer);
+    if (document.querySelector('.toast-box')) {
+        return false
+    }
+    let o;
     if (options) {
         options.text = text
         o = options
@@ -35,7 +37,7 @@ export default function(text, options) {
     container.classList.add('toast-box');
     document.body.appendChild(container);
     ReactDOM.render(<Toast { ...o } />, container, () => {
-        timer = setTimeout(() => {
+        setTimeout(() => {
             ReactDOM.unmountComponentAtNode(container);
             document.body.removeChild(container);
         }, 2000)

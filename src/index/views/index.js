@@ -3,14 +3,13 @@
 * @Date: 2018-04-25 10:47:17
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-05-21 18:42:22
+* @Last Modified time: 2018-05-22 15:45:14
 */
 import './index.scss';
 import ygfp from '@image/ygfp.jpg';
 import api from '../api.js';
 import List from '../component/list';
 import { Fragment } from 'react';
-import dialog from '@globalcomponent/dialog/index.js';
 
 export default class extends React.Component {
     constructor(props) {
@@ -28,17 +27,6 @@ export default class extends React.Component {
         // api('all').then((r) => {
         //     console.log(r)
         // })
-    }
-    handleClick() {
-        dialog({
-            title: '这是一个dialog',
-            content: '对不起啦，真的，呵呵呵',
-            
-        }).then(() => {
-            console.log('点击确认')
-        }).catch(() => {
-            console.log('点击关闭')
-        })
     }
     render() {
         const { lists } = this.state;
@@ -59,7 +47,6 @@ export default class extends React.Component {
                         })
                     }
                 </div>
-                {/*<div onClick={ () => this.handleClick()}>dialog</div>*/}
             </div>
         )
     }

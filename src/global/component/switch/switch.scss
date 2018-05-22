@@ -1,0 +1,56 @@
+/*
+* @Author: chenchao
+* @Date:   2018-05-22 11:25:00
+* @Last Modified by:   chenchao
+* @Last Modified time: 2018-05-22 15:57:12
+*/
+.switch-label{
+    position: relative;
+    display: inline-block;
+    height: 32px;
+    .switch-core{
+        display: inline-block;
+        position: relative;
+        width: 52px;
+        height: 32px;
+        border: 1px solid #d9d9d9;
+        border-radius: 16px;
+        box-sizing: border-box;
+        background: #d9d9d9;
+        &::before, &::after{
+            content: '';
+            top: 0;
+            left: 0;
+            position: absolute;
+            transition: transform 0.3s;
+            border-radius: 15px;
+        }
+        &::before{
+            width: 50px;
+            height: 30px;
+            background-color: #fdfdfd;
+        }
+        &::after{
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,.4);
+        }
+    }
+    .switch-input:checked + .switch-core{
+        border-color: #1bd267;
+        background-color: #1bd267;
+        &::before{
+            transform: scale(0);
+        }
+        &::after{
+            transform: translateX(20px);
+        }
+    }
+}
+
+
+
+
+
+

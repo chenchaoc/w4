@@ -3,7 +3,7 @@
 * @Date: 2018-04-10 16:03:11
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-05-21 18:38:10
+* @Last Modified time: 2018-05-22 16:02:57
 */
 import Dialog from './dialog.js';
 
@@ -16,10 +16,14 @@ import Dialog from './dialog.js';
  *  content  {[string]} [dialog正文] [default: null]
  *  showCloseBtn {[string]} [dialog右上角关闭图标是否展示] [default: true]
  *  closeCb {[function]} [dialog右上角点击关闭回调函数] [default: () => {}]
- *  showConfirmBtn {[string]} [dialog底部按钮] [default: true]
- *  confirmText {[string]} [dialog底部按钮文字] [default: '确认']
- *  confirmCb {[function]} [dialog底部按钮回调函数] [default: () => {}]
+ *  showConfirmBtn {[string]} [dialog底部确认按钮] [default: true]
+ *  confirmText {[string]} [dialog底部确认按钮文字] [default: '确认']
+ *  confirmCb {[function]} [dialog底部确认按钮回调函数] [default: () => {}]
+ *  showCancelBtn {[string]} [dialog底部取消按钮] [default: true]
+ *  cancelText {[string]} [dialog底部取消按钮文字] [default: '确认']
+ *  cancelCb {[function]} [dialog底部取消按钮回调函数] [default: () => {}]
  * @return {[Promise]}         [description]
+ * 示例 dialog({...}).then(() => {}).catch(() => {})
  */
 export default function(options) {
     return new Promise((resolve, reject) => {
@@ -32,6 +36,9 @@ export default function(options) {
             },
             closeCb: () => {
                 reject(ReactDOM.unmountComponentAtNode(container) && document.body.removeChild(container))                
+            },
+            cancelCb: () => {
+                reject(ReactDOM.unmountComponentAtNode(container) && document.body.removeChild(container))
             }
         })
         ReactDOM.render(<Dialog { ...os } />, container);
