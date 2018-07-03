@@ -3,10 +3,31 @@
 * @Date: 2018-04-03 14:45:13
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 15:42:49
+* @Last Modified time: 2018-07-03 18:25:27
 */
 
 import axios from 'axios';
+
+const origin = `\\${location.host}`
+
+if (origin.includes('test')) {
+  window.pageConfig = {
+    mUrl: '//mtest.chenchaoc.top',
+    pUrl: '//test.chenchaoc.top'
+  }
+} else if (origin.includes('beta')) {
+  window.pageConfig = {
+    mUrl: '//mbeta.chenchaoc.top',
+    pUrl: '//beta.chenchaoc.top'
+  }
+} else {
+  window.pageConfig = {
+    mUrl: '//m.chenchaoc.top',
+    pUrl: '//www.chenchaoc.top'
+  }
+}
+
+
 
 /**
  * [changeDocTitle 标题修改]

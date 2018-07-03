@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-05-22 11:25:00
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-05-22 15:57:12
+* @Last Modified time: 2018-06-22 11:18:31
 */
 .switch-label{
     position: relative;
@@ -37,7 +37,7 @@
             box-shadow: 0 1px 3px rgba(0,0,0,.4);
         }
     }
-    .switch-input:checked + .switch-core{
+    .switch-input.switch-input-checked + .switch-core{
         border-color: #1bd267;
         background-color: #1bd267;
         &::before{

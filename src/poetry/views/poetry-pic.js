@@ -3,7 +3,7 @@
 * @Date: 2018-04-25 11:31:42
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-25 11:43:23
+* @Last Modified time: 2018-05-29 11:07:37
 */
 export default class extends React.Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export default class extends React.Component {
     }
     render() {
         return (
-            <div>222222222</div>
+            <div>{this.props.match.params.itemId}</div>
         )
     }
 }

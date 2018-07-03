@@ -3,7 +3,7 @@
 * @Date: 2018-04-10 16:03:11
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-05-22 16:02:57
+* @Last Modified time: 2018-05-22 18:43:15
 */
 import Dialog from './dialog.js';
 
@@ -35,7 +35,7 @@ export default function(options) {
                 resolve(ReactDOM.unmountComponentAtNode(container) && document.body.removeChild(container))
             },
             closeCb: () => {
-                reject(ReactDOM.unmountComponentAtNode(container) && document.body.removeChild(container))                
+                ReactDOM.unmountComponentAtNode(container) && document.body.removeChild(container)               
             },
             cancelCb: () => {
                 reject(ReactDOM.unmountComponentAtNode(container) && document.body.removeChild(container))
