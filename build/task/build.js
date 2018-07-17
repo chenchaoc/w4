@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:38:30
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-13 17:30:49
+* @Last Modified time: 2018-07-17 15:29:07
 */
 import webpack from 'webpack';
 import webpackConfig from '../webpack.config.prod.js';
@@ -31,7 +31,7 @@ webpack(webpackConfig, function(error,stats){
     if (stats.hasErrors() || stats.hasWarnings()) {
         return
     }
-    //集成发版
+    //集成发版，上传至ftp服务器运维发布
     if( envName == 'prod'){
         deploy();
     } else {

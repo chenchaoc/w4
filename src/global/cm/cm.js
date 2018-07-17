@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:45:13
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-03 18:25:27
+* @Last Modified time: 2018-07-17 15:21:12
 */
 
 import axios from 'axios';
@@ -12,22 +12,22 @@ const origin = `\\${location.host}`
 
 if (origin.includes('test')) {
   window.pageConfig = {
-    mUrl: '//mtest.chenchaoc.top',
-    pUrl: '//test.chenchaoc.top'
+    mUrl: '//mtest.chenchaoc.top/',
+    pUrl: '//test.chenchaoc.top/'
   }
 } else if (origin.includes('beta')) {
   window.pageConfig = {
-    mUrl: '//mbeta.chenchaoc.top',
-    pUrl: '//beta.chenchaoc.top'
+    mUrl: '//mbeta.chenchaoc.top/',
+    pUrl: '//beta.chenchaoc.top/'
   }
 } else {
   window.pageConfig = {
-    mUrl: '//m.chenchaoc.top',
-    pUrl: '//www.chenchaoc.top'
+    // mUrl: '//m.chenchaoc.top/',
+    mUrl: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
+    // pUrl: '//www.chenchaoc.top/'
+    pUrl: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/'
   }
 }
-
-
 
 /**
  * [changeDocTitle 标题修改]
@@ -54,7 +54,12 @@ export function changeDocTitle(title) {
  * @return {Promise}     [返回结果]
  */
 export function ajax(url, data={}, options={}){
-    return axios.post(url, Object.assign({}, {_t: new Date().getTime()}, data), ...options).then(res => res.data)
+  if (process.env.NODE_ENV == 'production') {
+    url = window.pageConfig.pUrl + url
+  } else if (process.env.NODE_ENV == 'development') {
+    url = `https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/${url}`
+  }
+  return axios.post(url, Object.assign({}, {_t: new Date().getTime()}, data), ...options).then(res => res.data)
 }
 /**
  * [ajaxOrder 按顺序发送ajax并执行每个回调，最终返回返回值的数组]
