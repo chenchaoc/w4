@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:43:34
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-20 18:12:30
+* @Last Modified time: 2018-07-17 17:42:08
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -11,6 +11,7 @@ import chalk from 'chalk';
 import autoprefixer from 'autoprefixer';  //postcss自动添加css前缀插件
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';  //打包完成提示
+import { envName } from './env.js';
 
 //import ImageminPlugin from 'imagemin-webpack-plugin';  //图片压缩插件,好像会损害图片质量?建议使用在线压缩 https://tinypng.com/
 
@@ -24,6 +25,11 @@ export default [
           process.stdout.write(`=====${chalk.green.bold(`[ built in ${buildTime} ]`)}=====`)
         }
     }),
+    //webpack4中process.env.NODE_ENV默认为production
+    new webpack.DefinePlugin({
+        //'process.env.NODE_ENV': '"production"',
+        'globalEnv': JSON.stringify(envName)
+    }),    
     new webpack.ProvidePlugin({  //全局载入的可以调用的组件名称
         React: 'react',
         ReactDOM: 'react-dom',

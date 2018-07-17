@@ -3,7 +3,7 @@
 * @Date: 2018-04-12 18:39:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-12 18:39:48
+* @Last Modified time: 2018-07-17 16:15:55
 */
 export default {
   project: 'react-app',
@@ -24,5 +24,5 @@ export default {
       projectId: '1' //项目编号
     }
   },
-  zipFilePath: `${process.cwd()}/uploadZip/react-app.zip`, //本地目录
+  zipFilePath: `${process.cwd()}/uploadZip/w4.zip`, //本地目录
 }

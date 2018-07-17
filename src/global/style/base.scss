@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-04-11 11:54:58
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-19 15:07:21
+* @Last Modified time: 2018-07-17 16:06:03
 */
 .color-base {
     color: #E84A01 !important;
@@ -19,31 +19,31 @@
 .color-75 {
     color: #757575 !important;
 }
-.font-12 {
+.f-12 {
     font-size: 12px !important;
 }
 
-.font-14 {
+.f-14 {
     font-size: 16px !important;
 }
 
-.font-16 {
+.f-16 {
     font-size: 16px !important;
 }
 
-.font-18 {
+.f-18 {
     font-size: 18px !important;
 }
 
-.font-20 {
+.f-20 {
     font-size: 20px !important;
 }
 
-.font-22 {
+.f-22 {
     font-size: 22px !important;
 }
 
-.font-bold {
+.fw-b {
     font-weight: bold !important;
 }
 
@@ -91,15 +91,15 @@
     float: right;
 }
 
-.align-left {
+.align-l {
     text-align: left;
 }
 
-.align-center {
+.align-c {
     text-align: center;
 }
 
-.align-right {
+.align-r {
     text-align: right;
 }
 /*超过长度省略号*/
@@ -118,3 +118,82 @@
     width: 100%;
     height: 100%;
 }
+.flex {
+    display: flex;
+    &.center { //主轴侧轴居中
+        align-items: center;
+        justify-content: center;
+    }
+    &.center-a { //侧轴居中
+        align-items: center;
+    }
+    &.center-j { //主轴居中
+        justify-content: center;
+    }
+    &.between { //主轴两端对齐
+        justify-content: space-between;
+    }
+    &.column { //主轴为垂直方向，起点在上沿
+        flex-direction: column;
+    }
+    &.row { ////换行，第一行在上方
+        flex-wrap: row;
+    }
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-4 {
+    flex: 4;
+}
+
+.flex-5 {
+    flex: 5;
+}
+
+.flex-6 {
+    flex: 6;
+}
+
+.flex-7 {
+    flex: 7;
+}
+
+.flex-8 {
+    flex: 8;
+}
+
+.flex-9 {
+    flex: 9;
+}
+
+.flex-10 {
+    flex: 10;
+}
+
+.flex-11 {
+    flex: 11;
+}
+
+.flex-12 {
+    flex: 12;
+}
+
+
+
+
+
+
+
+
+

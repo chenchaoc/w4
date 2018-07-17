@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 17:17:27
+* @Last Modified time: 2018-07-17 17:36:40
 */
 
 import webpack from 'webpack';
@@ -12,18 +12,12 @@ import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';  //css
 import CleanWebpackPlugin from 'clean-webpack-plugin';  //清除dist目录插件
 import ZipWebpackPlugin from 'zip-webpack-plugin';  //打包完成后dist目录压缩成zip
 import ManifestPlugin from 'webpack-manifest-plugin'; //文件映射路径
-import { envName } from './env.js';
 
 export default [
     //提取出来的样式放在[name].css文件中*/   For long term caching use filename: "[contenthash].css". Optionally add [name].
     new MiniCssExtractPlugin({
         filename: '[name]_[contenthash:8].css'
     }),
-    //webpack4中process.env.NODE_ENV默认为production
-    /*new webpack.DefinePlugin({
-        __DEV__: false,
-        __PROD__: true,
-    }),*/
     new OptimizeCssAssetsPlugin({  //css压缩去除注释
         cssProcessor: require('cssnano'),
         cssProcessorOptions: { discardComments: {removeAll: true } },
