@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-04-19 14:44:28
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-04-23 11:27:24
+* @Last Modified time: 2018-07-23 18:23:53
 */
 .app-header{
     line-height: 60px;
@@ -12,10 +12,28 @@
         background-color: #fff;
         width: 100%;
         box-shadow: 0 1px 3px rgba(0,0,0,.3);
+        z-index: 10000;
+    }
+    .nav-item:not(:first-child){
+        margin-left: 12px;
     }
     .nav-active{
         font-weight: bold;
         color: #1bd267;
         font-size: 16px;
+        position: relative;
+        &::before{
+            content: '';
+            display: none;
+            position: absolute;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #1bd267;
+        }
+        &.nav-bottom::before{
+            display: block;
+        }
     }
+
 }

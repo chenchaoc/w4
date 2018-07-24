@@ -3,11 +3,10 @@
 * @Date: 2018-04-18 17:09:45
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-02 16:07:11
+* @Last Modified time: 2018-07-23 19:15:52
 */
 import './router.scss';
 import { Route, Switch, Redirect } from 'react-router-dom';
-
 const Index = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-index" */ '../index/views/index.js'));
 const Poetry = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-pretry" */ '../poetry/index.js'));
 const FeDev = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-fedev" */ '../fe-dev/views/fe-dev.js'));

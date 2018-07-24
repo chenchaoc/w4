@@ -3,7 +3,7 @@
 * @Date: 2018-07-02 16:28:39
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-03 11:21:41
+* @Last Modified time: 2018-07-23 18:34:11
 */
 import { Route, Switch, Redirect, Link, Prompt, NavLink } from 'react-router-dom';
 
@@ -17,17 +17,19 @@ export default class extends React.Component {
     render() {
         const { ids } = this.state
         return (
-            <div>
-                诗歌页面
-                {
-                    ids.map((id,index) => {
-                        return (
-                            (index % 2) == 1 ? 
-                            <div key={ index }><Link to={ `/poetry/${id}/project` }>{`go-project-${id}`}</Link></div> :
-                            <div key={ index }><Link to={ `/poetry/${id}/jiu` }>{`go-jiu-${id}`}</Link></div>
-                        )
-                    })
-                }
+            <div className="app-poetry">
+                <div className="main-box">
+                    <div>诗歌页面</div>
+                    {
+                        ids.map((id,index) => {
+                            return (
+                                (index % 2) == 1 ? 
+                                <div key={ index }><Link to={ `/poetry/${id}/project` }>{`go-project-${id}`}</Link></div> :
+                                <div key={ index }><Link to={ `/poetry/${id}/jiu` }>{`go-jiu-${id}`}</Link></div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     }
