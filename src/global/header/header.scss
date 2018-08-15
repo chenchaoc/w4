@@ -2,14 +2,14 @@
 * @Author: chenchao
 * @Date:   2018-04-19 14:44:28
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-07-23 18:23:53
+* @Last Modified time: 2018-08-15 18:05:49
 */
 .app-header{
     line-height: 60px;
     margin-bottom: -60px;
+    background-color: #fff;
     &.fixed-header{
         position: fixed;
-        background-color: #fff;
         width: 100%;
         box-shadow: 0 1px 3px rgba(0,0,0,.3);
         z-index: 10000;
