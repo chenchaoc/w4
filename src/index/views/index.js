@@ -3,7 +3,7 @@
 * @Date: 2018-04-25 10:47:17
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-24 10:20:48
+* @Last Modified time: 2018-08-15 16:59:51
 */
 import './index.scss';
 import ygfp from '@image/ygfp.jpg';
@@ -19,16 +19,16 @@ export default class extends React.Component {
         }
     }
     componentDidMount() {
-        api('homeList').then((d) => {
-            this.setState({
-                lists: d.list
-            })
-        })
+        // api('homeList').then((d) => {
+        //     this.setState({
+        //         lists: d.list
+        //     })
+        // })
         // api('all').then((r) => {
         //     console.log(r)
         // })
     }
-    componentDidCatch(error, info) { //生命周期：错误边界
+    componentDidCatch(error, info) { //react16新的生命周期：错误边界
         console.log(error)
         console.log(info)
     }

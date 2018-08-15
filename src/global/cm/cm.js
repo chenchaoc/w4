@@ -3,33 +3,34 @@
 * @Date: 2018-04-03 14:45:13
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-17 17:45:40
+* @Last Modified time: 2018-08-15 13:08:39
 */
 
 import axios from 'axios';
-
-function apiUrl(env) {
-  return {
+//所有api地址
+const urls = {
     'dev': {
-      mUrl: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
-      pUrl: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/'
+      mApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
+      pApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/'
     },
     'test': {
-      mUrl: '//mtest.chenchaoc.top/',
-      pUrl: '//test.chenchaoc.top/'
+      mApi: '//mtest.chenchaoc.top/',
+      pApi: '//test.chenchaoc.top/'
     },
     'beta': {
-      mUrl: '//mbeta.chenchaoc.top/',
-      pUrl: '//beta.chenchaoc.top/'
+      mApi: '//mbeta.chenchaoc.top/',
+      pApi: '//beta.chenchaoc.top/'
     },
     'prod': {
       // mUrl: '//m.chenchaoc.top/',
-      mUrl: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
+      mApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
       // pUrl: '//www.chenchaoc.top/'
-      pUrl: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/'
+      pApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/'
     }
-  }[env]
-}
+  }
+// 注入window.pageConfig
+window.pageConfig = urls[process.env.GLOBAL_ENV]
+
 /**
  * [changeDocTitle 标题修改]
  * @param  {[string]} title [description]
@@ -55,7 +56,7 @@ export function changeDocTitle(title) {
  * @return {Promise}     [返回结果]
  */
 export function ajax(url, data={}, options={}){
-  return axios.post(`${apiUrl(globalEnv).pUrl}${url}`, Object.assign({}, {_t: new Date().getTime()}, data), ...options).then(res => res.data)
+  return axios.post(`${urls[process.env.GLOBAL_ENV].pApi}${url}`, Object.assign({}, {_t: new Date().getTime()}, data), ...options).then(res => res.data)
 }
 /**
  * [ajaxOrder 按顺序发送ajax并执行每个回调，最终返回返回值的数组]

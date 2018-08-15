@@ -6,7 +6,7 @@
               "browsers": ["last 2 versions"],
               "node": "current"
             },
-            "modules": false,
+            "modules": false, //模块转义
         }],
         //不写的话webpack配置文件不能使用es6语法
         "es2015",
