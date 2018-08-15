@@ -3,7 +3,7 @@
 * @Date: 2018-04-25 10:47:42
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-15 17:53:32
+* @Last Modified time: 2018-08-15 18:29:59
 */
 
 import PropTypes from 'prop-types';
@@ -33,7 +33,7 @@ export default class extends React.Component {
             <a href={`/poetry/info/${itemId}`} target="_blank" className="list-box">
                 <div className="list-item flex">
                     <div className="item-img">
-                        <PreImg src={imgUrl} />
+                        <PreImg />
                     </div>
                     <div className="item-r flex-1">
                         <div className="item-title">{title}</div>

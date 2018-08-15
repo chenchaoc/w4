@@ -3,12 +3,13 @@
 * @Date: 2018-08-15 17:18:05
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-15 17:44:29
+* @Last Modified time: 2018-08-15 18:30:37
 */
 
+import './preloadimg-image.scss';
 import PropTypes from 'prop-types';
 
-const defaultLoading = 'http://house-test-water.oss.aliyuncs.com/resource/iwjw-pc_test/img/common/placeholder.png';
+const defaultHolder = 'https://dummyimage.com/200x200/c0b5c5/FFF&text=image~error';
 
 /**
  * 计算cover相对位置
@@ -16,10 +17,6 @@ const defaultLoading = 'http://house-test-water.oss.aliyuncs.com/resource/iwjw-p
 function coverResize(height, width, parentH, parentW) {
   const pK = parentH / parentW; // 父斜率
   const iK = height / width; // 子斜率
-  console.log(pK)
-  console.log(iK)
-  console.log(parentH)
-  console.log(parentW)
   const offset = pK - iK; // 斜率差
 
   return offset <= 0
@@ -37,13 +34,13 @@ function coverResize(height, width, parentH, parentW) {
 
 export default class extends React.Component {
   static propTypes = {
-    src: PropTypes.string, // 真实路径
+    src: PropTypes.string.isRequired, // 真实路径
     placeHolder: PropTypes.string, // 占位图路径
     fitModel: PropTypes.oneOf(["cover"]) // 填充模式
   };
 
   static defaultProps = {
-    placeHolder: defaultLoading, // 默认占位图为经纪人图片
+    placeHolder: defaultHolder, // 默认占位图
     fitModel: 'cover'
   };
 
@@ -128,7 +125,6 @@ export default class extends React.Component {
   }
 
   render() {
-    console.log(this.combinDomProps())
-    return <img {...this.combinDomProps()} ref={d => (this.imgDom = d)} />;
+    return <img className="pre-img" {...this.combinDomProps()} ref={d => (this.imgDom = d)} />;
   }
 }
