@@ -3,10 +3,10 @@
 * @Date: 2018-04-25 10:47:17
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-16 11:48:22
+* @Last Modified time: 2018-08-16 16:13:44
 */
 import './index.scss';
-import ygfp from '@image/ygfp.jpg';
+import ygfp from '@globalimage/ygfp.jpg';
 import api from '../api.js';
 import List from '../component/list';
 import { Fragment } from 'react';
@@ -23,6 +23,8 @@ export default class extends React.Component {
             this.setState({
                 lists: d.list
             })
+        }).catch((error) => {
+            console.log(error)
         })
         // api('all').then((r) => {
         //     console.log(r)

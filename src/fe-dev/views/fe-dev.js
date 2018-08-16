@@ -3,7 +3,7 @@
 * @Date: 2018-04-20 17:48:59
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-06-22 11:28:36
+* @Last Modified time: 2018-08-16 16:18:50
 */
 import './fe-dev.scss';
 import dialog from '@globalcomponent/dialog/index.js';
@@ -18,24 +18,6 @@ export default class extends React.Component {
         super(props)
         this.state = {
             checked: true
-        }
-    }
-    componentDidMount() {
-        let arr = [1,2,3,4,5,15,9,11,6,51,22]
-        let na = arr.filter((v) => {
-            return v < 8
-        })
-        console.log(na)
-        let a = 0
-        for ( let i=0; i<=na.length -1; i++) {
-            for( let k=i+1; k<= na.length -1; k++){
-                a++
-                if(na[i] + na[k] == 8){
-                    console.log('数字：', na[i], '位置：', arr.findIndex((v) => v == na[i]), '数字：', na[k], '位置：', arr.findIndex((v) => v == na[k]))
-                    console.log('循环了',a,'次')
-                    return false;
-                }
-            }
         }
     }
     handleClick() {
