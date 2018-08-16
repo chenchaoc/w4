@@ -3,7 +3,7 @@
 * @Date: 2018-04-18 17:09:45
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-23 19:15:52
+* @Last Modified time: 2018-08-16 11:48:39
 */
 import './router.scss';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -19,6 +19,10 @@ export default class extends React.Component {
     constructor(props) {
         super(props)
     }
+    componentDidCatch(error, info) { //react16新的生命周期：错误边界
+        console.log(error)
+        console.log(info)
+    }    
     render() {
         return (
             <section className="app-content">

@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:43:34
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-15 12:53:38
+* @Last Modified time: 2018-08-16 11:32:40
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -28,7 +28,7 @@ export default [
     //webpack4中process.env.NODE_ENV默认为production
     new webpack.DefinePlugin({
         'process.env': {
-            'NODE_ENV': '"production"',
+            //'NODE_ENV': '"production"',
             'GLOBAL_ENV': JSON.stringify(envName)
         }
     }),

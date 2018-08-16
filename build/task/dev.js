@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:38:06
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-23 18:58:23
+* @Last Modified time: 2018-08-16 11:30:46
 */
 
 import express from 'express'; //nodejs 框架
@@ -12,7 +12,7 @@ import chalk from 'chalk'; //变色
 import webpack from 'webpack'; //webpack
 import webpackDevMiddleware from 'webpack-dev-middleware';  //nodejs服务中间件
 import webpackHotMiddleware from 'webpack-hot-middleware'; //热刷新
-import connectHistoryApiFallback from 'connect-history-api-fallback'; //热刷新
+import connectHistoryApiFallback from 'connect-history-api-fallback'; //热刷新不会丢失？
 import httpProxyMiddleware from 'http-proxy-middleware'; //http代理中间件
 
 import proxyConfig from '../config/proxyConfig.js';

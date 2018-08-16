@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:45:13
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-15 13:08:39
+* @Last Modified time: 2018-08-16 11:20:49
 */
 
 import axios from 'axios';
@@ -11,21 +11,27 @@ import axios from 'axios';
 const urls = {
     'dev': {
       mApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
-      pApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/'
+      pApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
+      mUrl: 'http//10.7.248.232:6868/', //临时ip地址
+      pUrl: 'http//10.7.248.232:6868/'
     },
     'test': {
-      mApi: '//mtest.chenchaoc.top/',
-      pApi: '//test.chenchaoc.top/'
+      mApi: 'http//mtest.chenchaoc.top/',
+      pApi: 'http//test.chenchaoc.top/',
+      mUrl: 'http//mtest.chenchaoc.top/',
+      pUrl: 'http//test.chenchaoc.top/'
     },
     'beta': {
-      mApi: '//mbeta.chenchaoc.top/',
-      pApi: '//beta.chenchaoc.top/'
+      mApi: 'http//mbeta.chenchaoc.top/',
+      pApi: 'http//beta.chenchaoc.top/',
+      mUrl: 'http//mbeta.chenchaoc.top/',
+      pUrl: 'http//beta.chenchaoc.top/'
     },
     'prod': {
-      // mUrl: '//m.chenchaoc.top/',
       mApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
-      // pUrl: '//www.chenchaoc.top/'
-      pApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/'
+      pApi: 'https://www.easy-mock.com/mock/5add7e95fe29a6045d0a7baa/study/',
+      mUrl: 'https//m.chenchaoc.top/',
+      pUrl: 'https//www.chenchaoc.top/'
     }
   }
 // 注入window.pageConfig

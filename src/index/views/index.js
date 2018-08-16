@@ -3,7 +3,7 @@
 * @Date: 2018-04-25 10:47:17
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-15 17:28:04
+* @Last Modified time: 2018-08-16 11:48:22
 */
 import './index.scss';
 import ygfp from '@image/ygfp.jpg';
@@ -27,10 +27,6 @@ export default class extends React.Component {
         // api('all').then((r) => {
         //     console.log(r)
         // })
-    }
-    componentDidCatch(error, info) { //react16新的生命周期：错误边界
-        console.log(error)
-        console.log(info)
     }
     render() {
         const { lists } = this.state;
