@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 17:48:03
+* @Last Modified time: 2018-08-17 11:45:36
 */
 
 import entry from './config/entry.js';
@@ -26,7 +26,7 @@ export default {
         //chunkFilename: '[name][id].js' //代码分割时非入口文件js的命名规则        
     },
     resolve: {
-        extensions: [".js", ".jsx", ".css", ".scss"], //自动解析确定的扩展
+        extensions: [".js", ".jsx", ".css", ".scss"], //自动解析确定的文件后缀扩展
         alias, //文件路径别名
     },
     devtool: 'source-map',

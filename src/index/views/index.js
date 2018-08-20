@@ -3,7 +3,7 @@
 * @Date: 2018-04-25 10:47:17
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-16 16:13:44
+* @Last Modified time: 2018-08-18 20:29:38
 */
 import './index.scss';
 import ygfp from '@globalimage/ygfp.jpg';
@@ -35,7 +35,7 @@ export default class extends React.Component {
         return (
             <div className="app-home">
                 <div className="home-banner">
-                    <img className="w100-h100" src={ygfp} alt="云谷飞瀑" title="云谷飞瀑" />
+                    <img className="w100-h100" src={ygfp} alt="云谷飞瀑" title="宜春明月山云谷飞瀑" />
                 </div>
                 <div className="home-list main-box">
                     {

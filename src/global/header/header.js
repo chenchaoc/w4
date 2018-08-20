@@ -3,7 +3,7 @@
 * @Date: 2018-04-18 16:25:38
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-23 18:05:48
+* @Last Modified time: 2018-08-17 17:37:43
 */
 import './header.scss';
 import classnames from 'classnames';
@@ -32,7 +32,7 @@ export default class extends React.Component {
                 itemWord: '单身笔记'
             }, {
                 to: '/she',
-                itemWord: '想你的她',
+                itemWord: '想念的她',
             }]
         }
     }

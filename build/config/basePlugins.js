@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:43:34
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-16 11:32:40
+* @Last Modified time: 2018-08-17 11:50:27
 */
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
@@ -42,7 +42,7 @@ export default [
     new HtmlWebpackPlugin({  //自动生成html文件并载入打包后的css js
         title: '个人网站',
         filename: 'index.html',
-        template: 'index.html',
+        template: 'app.html',
         inject: 'body',  //默认插入body底部 选项：true, body, head, false
         //favicon: '路径' title图标 
         minify: false,  //是否压缩html文件
