@@ -3,10 +3,11 @@
 * @Date: 2018-04-03 14:42:32
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-29 12:18:05
+* @Last Modified time: 2018-08-24 16:04:54
 */
 import { loader } from 'mini-css-extract-plugin'; //从js分离出css,代替ExtractTextPlugin,webpack4官方推荐,支持非入口文件的css异步加载
-
+import { envName } from './env.js';
+const initLoader = envName == 'prod' ? [ { loader } ] : [ { loader: 'style-loader'} ]
 function postcssPlugins() {
     return {
         plugins() {
@@ -31,9 +32,7 @@ export default [
         }
     }, {
         test: /\.css$/,
-        use: [{
-            loader: loader
-        }, {
+        use: [ ...initLoader, {
             loader: 'css-loader'
         }, {
             loader: 'postcss-loader',
@@ -41,9 +40,7 @@ export default [
         }]
     }, {
         test: /\.scss$/,
-        use: [{
-            loader: loader
-        }, {
+        use: [ ...initLoader, {
             loader: 'css-loader'
         }, {
             loader: 'postcss-loader',
