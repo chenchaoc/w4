@@ -2,81 +2,22 @@
 * @Author: chenchao
 * @Date:   2018-04-11 11:54:58
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-07-23 17:43:47
+* @Last Modified time: 2018-08-28 17:01:32
 */
 .color-base {
     color: #E84A01 !important;
 }
-
 .color-ff {
     color: #ffffff !important;
 }
-
 .color-21 {
     color: #212121 !important;
 }
-
 .color-75 {
     color: #757575 !important;
 }
-.f-12 {
-    font-size: 12px !important;
-}
-
-.f-14 {
-    font-size: 16px !important;
-}
-
-.f-16 {
-    font-size: 16px !important;
-}
-
-.f-18 {
-    font-size: 18px !important;
-}
-
-.f-20 {
-    font-size: 20px !important;
-}
-
-.f-22 {
-    font-size: 22px !important;
-}
-
-.fw-b {
-    font-weight: bold !important;
-}
-
-.border-t-e6 {
-    border-left: 1px solid #E6E6E6 !important;
-}
-
-.border-l-e6 {
-    border-left: 1px solid #E6E6E6 !important;
-}
-
-.border-r-e6 {
-    border-right: 1px solid #E6E6E6 !important;
-}
-
-.border-b-e6 {
-    border-bottom: 1px solid #E6E6E6 !important;
-}
-
 .bg-c-ff {
     background-color: #fff !important;
-}
-.pd-l-6{
-    padding-left: 6px;
-}
-.pd-r-6{
-    padding-right: 6px;
-}
-.pd-l-12{
-    padding-left: 12px;
-}
-.pd-r-12{
-    padding-right: 12px;
 }
 /* 清除浮动 */
 .clearfix {
@@ -149,53 +90,20 @@
         flex-wrap: row;
     }
 }
-
-.flex-1 {
-    flex: 1;
+.fw-b {
+    font-weight: bold;
 }
-
-.flex-2 {
-    flex: 2;
+$i: 30;
+$k: 4;
+//字体大小  10 - 30
+@while $i >= 10 {
+  .f-#{$i} { font-size: 1px * $i; }
+  $i: $i - 2;
 }
-
-.flex-3 {
-    flex: 3;
-}
-
-.flex-4 {
-    flex: 4;
-}
-
-.flex-5 {
-    flex: 5;
-}
-
-.flex-6 {
-    flex: 6;
-}
-
-.flex-7 {
-    flex: 7;
-}
-
-.flex-8 {
-    flex: 8;
-}
-
-.flex-9 {
-    flex: 9;
-}
-
-.flex-10 {
-    flex: 10;
-}
-
-.flex-11 {
-    flex: 11;
-}
-
-.flex-12 {
-    flex: 12;
+// flex  1 - 4
+@while $k >= 1 {
+  .flex-#{$k} { flex: 1 * $k; }
+  $k: $k - 1;
 }
 
 
