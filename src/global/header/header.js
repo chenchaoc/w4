@@ -3,7 +3,7 @@
 * @Date: 2018-04-18 16:25:38
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-17 17:37:43
+* @Last Modified time: 2018-08-30 15:45:21
 */
 import './header.scss';
 import classnames from 'classnames';
@@ -37,9 +37,9 @@ export default class extends React.Component {
         }
     }
     componentDidMount() {
-        this.fixedPos()
+        //this.fixedPos()
     }
-    fixedPos() {
+/*    fixedPos() {
         window.onscroll = () => {
             if (document.documentElement.scrollTop > 0) {
                 this.setState({
@@ -74,7 +74,7 @@ export default class extends React.Component {
             return true
         }
 
-    }
+    }*/
     render() {
         const { fixedH, items } = this.state
         return (
