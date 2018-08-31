@@ -3,7 +3,7 @@
 * @Date: 2018-04-20 17:52:22
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-08-18 14:10:13
+* @Last Modified time: 2018-08-31 00:19:21
 */
 import './she.scss';
 
@@ -15,7 +15,7 @@ export default class extends React.Component {
         return (
             <div className="app-she">
                 <div className="main-box she-box">
-                    <div className="she-title f-22 fw-b align-c">有一天，我们可以这样相爱</div>
+                    <div className="she-title f-22 fw-b">有一天，我们可以这样相爱</div>
                     <div className="she-content">
                     有一天,我们可不可以这样相爱<br/>
                     约定好去每一个彼此都想去的地方<br/>
