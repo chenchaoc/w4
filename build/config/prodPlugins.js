@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:14
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-07-17 17:36:40
+* @Last Modified time: 2018-09-01 10:00:15
 */
 
 import webpack from 'webpack';
@@ -26,7 +26,7 @@ export default [
     new ManifestPlugin({
         fileName: 'manifest.json',
         basePath: `${process.cwd()}/dist/`
-    }),    
+    }),
     new CleanWebpackPlugin(
         ['uploadZip','dist'],  //清空文件夹名称
         {   root: process.cwd(),  //根目录

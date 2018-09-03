@@ -2,20 +2,19 @@
 * @Author: chenchao
 * @Date:   2018-04-19 14:44:28
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-08-30 15:42:54
+* @Last Modified time: 2018-09-01 21:22:54
 */
 .app-header{
     line-height: 60px;
-    //margin-bottom: -60px;
+    margin-bottom: -60px;
     background-color: #fff;
-    position: sticky;
-    z-index: 10000;
-    top: 0px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    //position: sticky;
+    //top: 0px;
     &.fixed-header{
         position: fixed;
         width: 100%;
         box-shadow: 0 1px 3px rgba(0,0,0,.3);
+        z-index: 100;
     }
     .nav-item:not(:first-child){
         margin-left: 12px;

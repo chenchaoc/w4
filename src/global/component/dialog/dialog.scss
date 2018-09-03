@@ -2,7 +2,7 @@
 * @Author: chenchao
 * @Date:   2018-04-10 16:03:05
 * @Last Modified by:   chenchao
-* @Last Modified time: 2018-05-22 15:41:54
+* @Last Modified time: 2018-09-01 21:26:20
 */
 .dialog-mask {
     position: fixed;
@@ -11,7 +11,7 @@
     background: rgba(0, 0, 0, 0.54);
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 101;
     .dialog-wrapper{
         position: fixed;
         min-width: 250px;
