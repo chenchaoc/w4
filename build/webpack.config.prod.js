@@ -3,7 +3,7 @@
 * @Date: 2018-04-03 14:36:04
 * @Email: chenchao3@sh.superjia.com
 * @Last Modified by: chenchao
-* @Last Modified time: 2018-04-23 17:47:46
+* @Last Modified time: 2018-09-18 17:46:41
 */
 
 import entry from './config/entry.js';
@@ -25,7 +25,7 @@ export default {
     output: {
         path: `${process.cwd()}/dist`,
         publicPath: envConfig.publicPath,
-        filename: '[name]_[hash:8].js',
+        filename: '[name]_[chunkhash:8].js',
         //chunkFilename: '[name][id].js'
     },
     resolve: {
