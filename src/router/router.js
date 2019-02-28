@@ -18,14 +18,34 @@ const She = ac.asyncComponent(() => import(/* webpackChunkName: "async-react-she
 export default class extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            heightStyle: {}
+        }
     }
     componentDidCatch(error, info) { //react16新的生命周期：错误边界
         console.log(error)
         console.log(info)
-    }    
+    }
+    componentDidMount(){
+    //   alert(window.screen.availHeight)
+    //   alert(window.screen.height)
+    //   alert(document.body.offsetHeight)
+    //   alert(document.body.clientHeight)
+    //   alert(document.documentElement.clientHeight)
+        this.fixHeight()
+    }
+    fixHeight() {
+        const windowHeight = document.documentElement.clientHeight || document.body.clientHeight
+        this.setState({
+            heightStyle: {
+                'minHeight': windowHeight - 60
+            }
+        })
+    }
     render() {
+        const { heightStyle } = this.state
         return (
-            <section className="app-content">
+            <section className="app-content" style={heightStyle}>
                 <div className="content-box">
                     <Switch>
                         <Route path="/" exact component={Index} />

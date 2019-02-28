@@ -15,9 +15,9 @@ export default class extends React.Component {
         return (
             <footer className="app-footer">
                 <div className="main-box">
-                    ©2016-2018 版权所有 www.chenchaoc.top 
+                    ©2016-2019 版权所有 www.chenchaoc.top 
                     <a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank" className="color-ff">
-                        赣ICP备17002295号-1
+                        &nbsp;赣ICP备17002295号-1
                     </a>
                 </div>
             </footer>
