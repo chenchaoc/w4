@@ -37,44 +37,45 @@ export default class extends React.Component {
         }
     }
     componentDidMount() {
-        this.fixedPos()
+        // this.fixedPos()
     }
-    fixedPos() {
-        window.onscroll = () => {
-            if (document.documentElement.scrollTop > 0) {
-                this.setState({
-                    fixedH: true
-                })
-            } else {
-                this.setState({
-                    fixedH: false
-                })
-            }
-        }
-    }
-    handleActive(match, location) {
-        if (location.pathname == '/') {            
-            return true
-        } else {
-            return false
-        }
-    }
-    shouldComponentUpdate(nextProps, nextState) {
-        const { lc } = this.state
-        if ( lc == location.href) {
-            if (this.state.fixedH == nextState.fixedH) {
-                return false
-            } else {
-                return true
-            }
-        } else {
-            this.setState({
-                lc: location.href
-            })
-            return true
-        }
+    // fixedPos() {
+    //     console.log(window.onscroll)
+    //     window.addEventListener('scroll', () => {
+    //         if (document.documentElement.scrollTop > 0) {
+    //             this.setState({
+    //                 fixedH: true
+    //             })
+    //         } else {
+    //             this.setState({
+    //                 fixedH: false
+    //             })
+    //         }
+    //     })
+    // }
+    // handleActive(match, location) {
+    //     if (location.pathname == '/') {            
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     const { lc } = this.state
+    //     if ( lc == location.href) {
+    //         if (this.state.fixedH == nextState.fixedH) {
+    //             return false
+    //         } else {
+    //             return true
+    //         }
+    //     } else {
+    //         this.setState({
+    //             lc: location.href
+    //         })
+    //         return true
+    //     }
 
-    }
+    // }
     render() {
         const { fixedH, items } = this.state
         return (
@@ -88,7 +89,8 @@ export default class extends React.Component {
                             items.map((item,i) => {
                                 return (
                                     <div className="nav-item" key={i}>
-                                        <NavLink to={ item.to } activeClassName="nav-active" className={ classnames('d-i-b', {'nav-bottom': fixedH}) } exact={ item.isexact }>{item.itemWord}</NavLink>
+                                        {/* <NavLink to={ item.to } activeClassName="nav-active" className={ classnames('d-i-b', {'nav-bottom': fixedH}) } exact={ item.isexact }>{item.itemWord}</NavLink> */}
+                                        <NavLink to={ item.to } activeClassName="nav-active" className="w100-h100 d-show" exact={ item.isexact }>{item.itemWord}</NavLink>
                                     </div>
                                 )
                             })
