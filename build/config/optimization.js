@@ -50,6 +50,8 @@ export default {
               priority: -5,
               reuseExistingChunk: true,
             },
+            vendors: false,
+            default: false
 /*            vendors: { //所有从node_modules引入的包均打包至vendors.js(同事entry的vendor需去掉)，此时文件出现告警超过244KB...
               test: /[\\/]node_modules[\\/]/,
               name: "vendors",

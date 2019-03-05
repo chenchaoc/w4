@@ -13,7 +13,8 @@ export default {
         'react-redux',
         'react-router-dom',
         'prop-types',
-        'axios'
+        'axios',
+        'antd'
     ],
     common: [
         './global/cm/cm.js',

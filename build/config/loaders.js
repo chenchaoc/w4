@@ -31,23 +31,17 @@ export default [
             }
         }
     }, {
-        test: /\.css$/,
+        test: /\.(sa|sc|le|c)ss$/,
         use: [ ...initLoader, {
             loader: 'css-loader'
-        }, {
-            loader: 'postcss-loader',
-            options: postcssPlugins()        
-        }]
-    }, {
-        test: /\.scss$/,
-        use: [ ...initLoader, {
-            loader: 'css-loader'
-        }, {
+          }, {
             loader: 'postcss-loader',
             options: postcssPlugins()
-        }, {
+          }, {
+            loader: 'less-loader'
+          }, {
             loader: 'sass-loader'
-        }]
+          }]
     }, {
         test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg|swf|jpeg)$/,
         use: [{

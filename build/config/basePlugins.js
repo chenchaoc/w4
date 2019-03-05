@@ -8,7 +8,7 @@
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import chalk from 'chalk';
-import autoprefixer from 'autoprefixer';  //postcss自动添加css前缀插件
+// import autoprefixer from 'autoprefixer';  //postcss自动添加css前缀插件
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';  //打包完成提示
 import { envName } from './env.js';
@@ -60,4 +60,5 @@ export default [
         suppressSuccess: true,
     }),
     new webpack.HashedModuleIdsPlugin(),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/), //精简moment的大小
 ]

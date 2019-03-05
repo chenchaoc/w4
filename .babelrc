@@ -16,6 +16,13 @@
     ],
     "plugins": [
         //https://segmentfault.com/q/1010000005596587?from=singlemessage&isappinstalled=1
-        "transform-runtime"
+        "transform-runtime",
+        ["import", 
+            { 
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": "css" 
+            }
+        ]
     ]
 }

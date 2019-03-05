@@ -10,6 +10,10 @@ import { Fragment } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+//antd中文化
+import { LocaleProvider } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
+
 import store from './redux/store.js';
 import Header from '@global/header/header.js';
 import Footer from '@global/footer/footer.js';
@@ -22,13 +26,15 @@ class App extends React.Component {
     render(){
         return (
             <Provider store={store}>
-                <BrowserRouter>
-                    <Fragment>
-                        <Header />
-                        <RouterMap />
-                        <Footer />
-                    </Fragment>
-                </BrowserRouter>
+                <LocaleProvider locale={zhCN}>
+                    <BrowserRouter>
+                        <Fragment>
+                            <Header />
+                            <RouterMap />
+                            <Footer />
+                        </Fragment>
+                    </BrowserRouter>
+                </LocaleProvider>
             </Provider>
         )
     }
